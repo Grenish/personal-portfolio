@@ -1,28 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Coiny&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Coiny&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root{
-    --dark: #0D1821;
-    --light: #f0f3f1;
-    --crusive : 'Coiny', cursive;
+::-webkit-scrollbar{
+    width: 0.5rem;
 }
 
-body{
-    background-color: var(--dark);   
-}
-
-.roundImage{
-    animation: round 90s infinite linear;
-}
-
-@keyframes round{
-    0%{
-        rotate: -360deg;
-    }
-    100%{
-        rotate: 0deg;
-    }
+::-webkit-scrollbar-thumb{
+    background: #EFDC9E;
 }
