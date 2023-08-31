@@ -5,7 +5,6 @@ import Footer from "./Footer";
 import Contact from "./Contact";
 import Home from "./Home";
 import BlogPosts from "./BlogPosts";
-import BackgroundImage from "./BackgroundImage";
 
 export {
   Navbar,
@@ -15,5 +14,4 @@ export {
   Contact,
   Home,
   BlogPosts,
-  BackgroundImage,
 };
