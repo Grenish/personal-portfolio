@@ -14,10 +14,13 @@ export default {
         jet: "#333533",
         vanilla: "#EFDC9E",
         jasmine: "#F2D47D",
+        dark: "#0D1821",
+        night: "#0C0F0A"
       },
       fontFamily: {
         sans: ["Poppins", "sans-serif"],
         mono: ['Source Code Pro', "monospace"],
+        cru: ['Coiny', 'cursive']
       }
     },
   },
