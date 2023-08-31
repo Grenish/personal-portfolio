@@ -7,15 +7,13 @@ import {
   Contact,
   Footer,
   Projects,
-  BackgroundImage
 } from "./components";
 import { Route, Routes } from "react-router";
 
 const App = () => {
   return (
-    <>
+    <div className="bg-dark dark:bg-alabaster transition-colors">
       <Navbar />
-      <BackgroundImage />
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
@@ -24,7 +22,7 @@ const App = () => {
         <Route path="/projects" element={<Projects />} />
       </Routes>
       <Footer />
-    </>
+    </div>
   );
 };
 
