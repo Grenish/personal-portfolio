@@ -7,6 +7,7 @@ import {
   Contact,
   Footer,
   Projects,
+  BackgroundImage
 } from "./components";
 import { Route, Routes } from "react-router";
 
@@ -14,6 +15,7 @@ const App = () => {
   return (
     <>
       <Navbar />
+      <BackgroundImage />
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
