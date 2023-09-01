@@ -44,11 +44,11 @@ const Home = () => {
             </p>
             <div
               className={`${
-                isFolderOpen ? "w-96" : "w-10"
-              } space-x-3 flex items-center rounded-full  transition-all ease-in-out`}
+                isFolderOpen ? " w-72 md:w-96" : "w-10"
+              } space-x-3 hidden sm:flex items-center rounded-full  transition-all ease-in-out`}
             >
               <button
-                className="bg-jet dark:bg-dark p-2 rounded-full"
+                className="bg-jet dark:bg-dark p-1.5 md:p-2 rounded-full"
                 onClick={toggleFolder}
               >
                 <FolderIcon />
@@ -57,7 +57,7 @@ const Home = () => {
                 <div
                   className={`${
                     isFolderOpen ? "space-x-3" : "space-x-[-43.5px]"
-                  } flex  transition-all ease-in-out duration-700 delay-700`}
+                  } hidden sm:flex  transition-all ease-in-out duration-700 delay-700`}
                 >
                   {socialMediaLinks.map((link) => (
                     <a
@@ -69,7 +69,7 @@ const Home = () => {
                       <img
                         src={link.icon}
                         alt={link.name}
-                        className=" w-11 bg-jet dark:bg-dark p-2 rounded-full"
+                        className="w-11 bg-jet dark:bg-dark p-2 rounded-full"
                       />
                     </a>
                   ))}
