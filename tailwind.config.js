@@ -22,6 +22,9 @@ export default {
         sans: ["Poppins", "sans-serif"],
         mono: ['Source Code Pro', "monospace"],
         cru: ['Coiny', 'cursive']
+      },
+      fontWeight: {
+        extraBold: 1000,
       }
     },
   },
