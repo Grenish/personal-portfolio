@@ -32,56 +32,30 @@ const Home = () => {
               Web Developer and UI/UX Designer
             </p>
           </div>
-          <div className="mt-5">
+          <div className="mt-5 font-sans">
             <p className="text-base md:text-lg text-platinum dark:text-dark">
               Innovating through code, shaping tomorrow's tech. Currently
               pursuing BCA.
             </p>
           </div>
-          <div className="text-saffron mt-2 dark:text-vanilla transition-colors duration-150">
+          <div className="text-saffron font-sans mt-2 flex items-center space-x-3 dark:text-vanilla transition-colors duration-150">
             <p className="text-base md:text-lg text-platinum dark:text-dark">
               Find me here
             </p>
-            <div
-              className={`${
-                isFolderOpen ? " w-72 md:w-96" : "w-10"
-              } space-x-3 hidden sm:flex items-center rounded-full  transition-all ease-in-out`}
-            >
-              <button
-                className="bg-jet dark:bg-dark p-1.5 md:p-2 rounded-full"
-                onClick={toggleFolder}
+            {socialMediaLinks.map((link) => (
+              <a
+                key={link.name}
+                href={link.link}
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                <FolderIcon />
-              </button>
-              {isFolderOpen && (
-                <div
-                  className={`${
-                    isFolderOpen ? "space-x-3" : "space-x-[-43.5px]"
-                  } hidden sm:flex  transition-all ease-in-out duration-700 delay-700`}
-                >
-                  {socialMediaLinks.map((link) => (
-                    <a
-                      key={link.name}
-                      href={link.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <img
-                        src={link.icon}
-                        alt={link.name}
-                        className="w-11 bg-jet dark:bg-dark p-2 rounded-full"
-                      />
-                    </a>
-                  ))}
-                  <button
-                    className="bg-jet dark:bg-dark p-2 rounded-full"
-                    onClick={toggleFolder}
-                  >
-                    <CloseIcon />
-                  </button>
-                </div>
-              )}
-            </div>
+                <img
+                  src={link.icon}
+                  alt={link.name}
+                  className="w-11 bg-jet dark:bg-platinum p-2 rounded-full"
+                />
+              </a>
+            ))}
           </div>
         </div>
       </SectionWrapper>
