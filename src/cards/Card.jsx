@@ -1,9 +1,12 @@
 import React from "react";
 
-const Card = ({ name, icon, desc }) => {
+const Card = ({ id, name, icon, desc }) => {
   return (
     <div>
-      <div className="flex relative items-center border-4 sm:h-20 h-24 cursor-pointer overflow-hidden border-vanilla dark:border-saffron rounded-2xl p-3 group">
+      <div
+        className="flex relative items-center border-4 sm:h-20 h-24 cursor-pointer overflow-hidden border-vanilla dark:border-saffron rounded-2xl p-3 group"
+        key={id}
+      >
         <img
           src={icon}
           alt={name}

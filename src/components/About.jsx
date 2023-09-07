@@ -55,6 +55,7 @@ const About = () => {
               >
                 <div className="mx-2">
                   <Card
+                    key={tech.id}
                     name={tech.name}
                     icon={tech.icon}
                     desc={tech.desc}
