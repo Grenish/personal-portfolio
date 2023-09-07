@@ -1,7 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import { SectionWrapper } from "../hoc";
 
 const Contact = () => {
+  const [formState, setFormState] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  const handleChange = (event) =>
+    setFormState({ ...formState, [event.target.name]: event.target.value });
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    alert(`Thank you for your message, ${formState.name}`);
+  };
+
   return (
     <SectionWrapper>
       <div className="mb-10">
@@ -24,11 +37,11 @@ const Contact = () => {
           method="POST"
           data-netlify="true"
           className="w-full max-w-lg"
-          onSubmit="submit"
+          onSubmit={handleSubmit}
         >
-          <input type="hidden" name="form-name" value="contact" />
           <div className="flex flex-wrap -mx-3 mb-6">
             <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+              <input type="hidden" name="form-name" value="contact" />
               <label
                 className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
                 htmlFor="name"
@@ -40,6 +53,8 @@ const Contact = () => {
                 id="name"
                 type="text"
                 name="name"
+                value={formState.name}
+                onChange={handleChange}
               />
             </div>
             <div className="w-full md:w-1/2 px-3">
@@ -54,6 +69,8 @@ const Contact = () => {
                 id="email"
                 type="email"
                 name="email"
+                value={formState.email}
+                onChange={handleChange}
               />
             </div>
           </div>
@@ -69,6 +86,8 @@ const Contact = () => {
                 className=" no-resize appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white h-48 resize-none"
                 id="message"
                 name="message"
+                value={formState.message}
+                onChange={handleChange}
               ></textarea>
             </div>
           </div>
