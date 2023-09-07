@@ -7,7 +7,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 
 const Navbar = () => {
-  const savedTheme = localStorage.getItem('themePreference') || 'light';
+  const savedTheme = localStorage.getItem("themePreference") || "light";
   const [darkMode, setDarkMode] = useState(savedTheme);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -17,9 +17,8 @@ const Navbar = () => {
     } else {
       document.documentElement.classList.remove("dark");
     }
-    localStorage.setItem('themePreference', darkMode);
+    localStorage.setItem("themePreference", darkMode);
   }, [darkMode]);
-
 
   const toggleDarkMode = () => {
     setDarkMode(darkMode === "dark" ? "light" : "dark");
@@ -34,7 +33,7 @@ const Navbar = () => {
       <header className="w-full p-4 fixed z-[9999]">
         <nav className=" border-[3px] border-vanilla dark:border-dark w-11/12 md:w-3/4 xl:w-7/12 m-auto bg-[#e8eddf26] dark:bg-[#24242326] backdrop-blur-xl p-5 md:p-3 rounded-[20px] flex items-center justify-between">
           <div className="flex items-center justify-center ml-0 md:ml-2">
-            <Link to="/">
+            <Link to="/" onClick={() => setIsMenuOpen(false)}>
               {darkMode === "dark" ? (
                 <img
                   src={grenishLogoBlack}
@@ -87,17 +86,17 @@ const Navbar = () => {
         {isMenuOpen && (
           <div className="sm:hidden block fixed bg-[#152939a5] dark:bg-[#EFDC9Ea5] backdrop-blur-md top-0 left-0 w-full z-[-999] rounded-b-xl transition duration-100">
             <ul className="flex flex-col mt-20 space-y-2 p-4">
-              <Link to="/about">
+              <Link to="/about" onClick={() => setIsMenuOpen(false)}>
                 <li className="p-3 text-lg dark:text-dark  dark:hover:text-dark transition rounded-full text-platinum ">
                   About
                 </li>
               </Link>
-              <Link to="/projects">
+              <Link to="/projects" onClick={() => setIsMenuOpen(false)}>
                 <li className="p-3 text-lg dark:text-dark  dark:hover:text-dark transition rounded-full text-platinum ">
                   Projects
                 </li>
               </Link>
-              <Link to="/contact">
+              <Link to="/contact" onClick={() => setIsMenuOpen(false)}>
                 <li className="p-3 text-lg dark:text-dark  dark:hover:text-dark transition rounded-full text-platinum ">
                   Contact
                 </li>
