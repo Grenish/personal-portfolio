@@ -1,18 +1,35 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { SectionWrapper } from "../hoc";
+import emailjs from "@emailjs/browser";
+import { Navigate } from "react-router";
 
 const Contact = () => {
-  const [formState, setFormState] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
+  const form = useRef();
+  const [success, setSuccess] = useState(false);
 
-  const handleChange = (event) =>
-    setFormState({ ...formState, [event.target.name]: event.target.value });
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    alert(`Thank you for your message, ${formState.name}`);
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    setSuccess(true);
+    emailjs
+      .sendForm(
+        "service_if0mumh",
+        "template_sc89v86",
+        form.current,
+        "l7C927l7oG81bVDXX"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+          window.location.href = "/success";
+          setSuccess(false);
+        },
+        (error) => {
+          console.log(error.text);
+          window.location.href = "/error";
+          setSuccess(false);
+        }
+      );
   };
 
   return (
@@ -20,25 +37,19 @@ const Contact = () => {
       <div className="mb-10">
         <h2
           id="contact_header"
-          className="text-3xl font font-extraBold text-platinum dark:text-night mb-4"
+          className="text-3xl font-extrabold text-platinum dark:text-night mb-4"
         >
           Contact Me
         </h2>
         <p
-          className="text-gray-400 dark:text-gray-800 text-justify mt-4"
+          className="text-gray-500 dark:text-gray-200 text-justify mt-4"
           aria-labelledby="contact_header"
         >
           You can reach me through the following form:
         </p>
       </div>
-      <div className="flex flex-col justify-center items-center space-y-5">
-        <form
-          name="contact"
-          method="POST"
-          data-netlify="true"
-          className="w-full max-w-lg"
-          onSubmit={handleSubmit}
-        >
+      <div className="flex flex-col items-center justify-center space-y-5 w-full">
+        <form ref={form} onSubmit={sendEmail} className="w-full max-w-lg">
           <div className="flex flex-wrap -mx-3 mb-6">
             <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
               <input type="hidden" name="form-name" value="contact" />
@@ -49,12 +60,13 @@ const Contact = () => {
                 Name
               </label>
               <input
-                className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                 id="name"
                 type="text"
-                name="name"
-                value={formState.name}
-                onChange={handleChange}
+                name="from_name"
+                required
+                aria-required="true"
+                placeholder="enter your name here..."
               />
             </div>
             <div className="w-full md:w-1/2 px-3">
@@ -65,12 +77,13 @@ const Contact = () => {
                 Email
               </label>
               <input
-                className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white"
+                className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white"
                 id="email"
                 type="email"
-                name="email"
-                value={formState.email}
-                onChange={handleChange}
+                name="from_email"
+                required
+                aria-required="true"
+                placeholder="enter your email here..."
               />
             </div>
           </div>
@@ -85,9 +98,10 @@ const Contact = () => {
               <textarea
                 className=" no-resize appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white h-48 resize-none"
                 id="message"
-                name="message"
-                value={formState.message}
-                onChange={handleChange}
+                name="from_message"
+                required
+                aria-required="true"
+                placeholder="Enter your message here..."
               ></textarea>
             </div>
           </div>
@@ -96,8 +110,10 @@ const Contact = () => {
               <button
                 className="shadow bg-teal-400 hover:bg-teal-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
                 type="submit"
+                value="Send"
+                aria-label="Send message"
               >
-                Send
+                {success ? "Sending..." : "Send"}
               </button>
             </div>
             <div className="md:w-2/3"></div>
