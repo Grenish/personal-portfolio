@@ -5,6 +5,8 @@ import Footer from "./Footer";
 import Contact from "./Contact";
 import Home from "./Home";
 import BlogPosts from "./BlogPosts";
+import Success from "./Success";
+import Error from "./Error";
 
 export {
   Navbar,
@@ -14,4 +16,6 @@ export {
   Contact,
   Home,
   BlogPosts,
+  Success,
+  Error,
 };
