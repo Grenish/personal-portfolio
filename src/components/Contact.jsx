@@ -2,19 +2,6 @@ import React from "react";
 import { SectionWrapper } from "../hoc";
 
 const Contact = () => {
-  // Method to handle form submission
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Implement function to process the form submission
-  };
-
-  // Method to manage input text state
-  const handleChange = (e) => {
-    this.setState({
-      [e.target.name]: e.target.value,
-    });
-  };
-
   return (
     <SectionWrapper>
       <div className="mb-10">
@@ -36,11 +23,11 @@ const Contact = () => {
           name="contact"
           method="POST"
           data-netlify="true"
-          onSubmit={handleSubmit}
           className="w-full max-w-lg"
         >
           <div className="flex flex-wrap -mx-3 mb-6">
             <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+              <input type="hidden" name="contact" value="contact" />
               <label
                 className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
                 htmlFor="name"
@@ -51,7 +38,7 @@ const Contact = () => {
                 className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                 id="name"
                 type="text"
-                onChange={handleChange}
+                name="name"
               />
             </div>
             <div className="w-full md:w-1/2 px-3">
@@ -65,7 +52,7 @@ const Contact = () => {
                 className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white"
                 id="email"
                 type="email"
-                onChange={handleChange}
+                name="email"
               />
             </div>
           </div>
@@ -80,7 +67,7 @@ const Contact = () => {
               <textarea
                 className=" no-resize appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white h-48 resize-none"
                 id="message"
-                onChange={handleChange}
+                name="message"
               ></textarea>
             </div>
           </div>
