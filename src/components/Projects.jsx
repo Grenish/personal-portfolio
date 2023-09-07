@@ -5,8 +5,8 @@ import { projects } from "../constants";
 const ProjectCards = ({ id, name, image, desc, url }) => {
   return (
     <div>
-      <a href={url} key={id}>
-        <div className="relative group border-4 cursor-pointer overflow-hidden border-vanilla dark:border-saffron rounded-2xl p-3 h-full dark:text-gray-100 md:h-3/4">
+      <div className="relative group border-4 cursor-pointer overflow-hidden border-vanilla dark:border-saffron rounded-2xl p-3 h-full dark:text-gray-100 md:h-3/4">
+        <a href={url} key={id} target="_blank">
           <img
             src={image}
             alt={name}
@@ -20,8 +20,8 @@ const ProjectCards = ({ id, name, image, desc, url }) => {
               {desc}
             </p>
           </div>
-        </div>
-      </a>
+        </a>
+      </div>
     </div>
   );
 };
