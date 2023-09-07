@@ -9,6 +9,17 @@ import {
   nodejs,
 } from "../assets/tech";
 
+import {
+  zane,
+  imageflex,
+  coderjojo,
+  codersclub,
+  bcaResults,
+  exsolve,
+  hoobank,
+  studystuffs,
+} from "../assets/projects";
+
 export const socialMediaLinks = [
   {
     name: "Github",
@@ -36,44 +47,87 @@ export const techStack = [
   {
     name: "HTML",
     icon: html,
-    desc: "I have been working with HTML for 2 years now. I have used HTML in many of my projects and I am very comfortable with it.",
-    url: "https://www.w3schools.com/html/",
+    desc: "This is where I started my journey.",
   },
   {
     name: "CSS",
     icon: css,
-    desc: "I have been working with CSS for 2 years now. I have used CSS in many of my projects and I am very comfortable with it.",
-    url: "https://www.w3schools.com/css/",
+    desc: "The first styling I learned.",
   },
   {
     name: "JavaScript",
     icon: javascript,
-    desc: "I have been working with JavaScript for 2 years now. I have used JavaScript in many of my projects and I am very comfortable with it.",
-    url: "https://www.w3schools.com/js/DEFAULT.asp",
+    desc: "The lnguage I use to make things happen.",
   },
   {
     name: "React",
     icon: react,
-    desc: "I have been working with React for 1 year now. I have used React in many of my projects and I am very comfortable with it.",
-    url: "https://reactjs.org/",
+    desc: "React is my go to framework for frontend development.",
   },
   {
     name: "Tailwindcss",
     icon: tailwindcss,
-    desc: "I have been working with Tailwindcss for 1 year now. I have used Tailwindcss in many of my projects and I am very comfortable with it.",
-    url: "https://tailwindcss.com/",
+    desc: "It is my go to css framework.",
   },
   {
     name: "Nodejs",
     icon: nodejs,
-    desc: "I have been working with Nodejs for 1 year now. I have used Nodejs in many of my projects and I am very comfortable with it.",
-    url: "https://nodejs.org/en/",
+    desc: "nodejs is like a swiss army knife for me.",
   },
   {
     name: "Figma",
     icon: figma,
-    desc: "I have been working with Figma for 1 year now. I have used Figma in many of my projects and I am very comfortable with it.",
-    url: "https://www.figma.com/",
+    desc: "Brainstormer, wireframer, prototyper, designer, developer, and more.",
   },
-  
-]
+];
+
+export const projects = [
+  {
+    name: "Zane",
+    image: zane,
+    desc: "A simple and minimalistic chatbot.",
+    url: "https://betachat.netlify.app/",
+  },
+  {
+    name: "Imageflex",
+    image: imageflex,
+    desc: "A simple website to download high quality images.",
+    url: "https://imageflex.netlify.app/",
+  },
+  {
+    name: "Coderjojo",
+    image: coderjojo,
+    desc: "A portfolio website asked by a client.",
+    url: "https://coderjojotest.netlify.app/",
+  },
+  {
+    name: "Codersclub",
+    image: codersclub,
+    desc: "A website for a coding club at SMIT.",
+    url: "https://codersclub-smit.vercel.app/",
+  },
+  {
+    name: "BCA Results",
+    image: bcaResults,
+    desc: "A website to check BCA results.",
+    url: "https://bcaresults.vercel.app/",
+  },
+  {
+    name: "Exsolve",
+    image: exsolve,
+    desc: "Our freelancing website.",
+    url: "https://exsolve.netlify.app/",
+  },
+  {
+    name: "Hoobank",
+    image: hoobank,
+    desc: "First React project.",
+    url: "https://bank-project-1.netlify.app/",
+  },
+  {
+    name: "Studystuffs",
+    image: studystuffs,
+    desc: "A website to download study materials.",
+    url: "https://studystuffs.netlify.app/",
+  },
+];
