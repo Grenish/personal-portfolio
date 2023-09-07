@@ -9,6 +9,7 @@ import cccoil5 from "./cccoil5.svg";
 import cccoil6 from "./cccoil6.svg";
 import cccoil7 from "./cccoil7.svg";
 import cccoil8 from "./cccoil8.svg";
+import grenish2 from "./grenish2.jpg";
 
 
 export {
@@ -23,4 +24,5 @@ export {
   cccoil6,
   cccoil7,
   cccoil8,
+  grenish2,
 };
