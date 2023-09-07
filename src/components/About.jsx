@@ -1,9 +1,8 @@
 import React from "react";
 import { SectionWrapper } from "../hoc";
 import { grenish2 } from "../assets";
-import { Card } from "../card";
+import { Card } from "../Cards";
 import { techStack } from "../constants";
-import { html } from "../assets/tech";
 import { Transition } from "@headlessui/react";
 
 const About = () => {
