@@ -1,7 +1,7 @@
 import React from "react";
 import { SectionWrapper } from "../hoc";
 import { projects } from "../constants";
-import ProjectCards from "../cards/ProjectCards";
+import { ProjectCards } from "../Cards";
 
 const Projects = () => {
   return (
