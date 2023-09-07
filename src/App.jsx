@@ -11,9 +11,9 @@ import {
 import { Route, Routes } from "react-router";
 
 const App = () => {
-
   return (
     <div className="bg-dark dark:bg-alabaster transition-colors">
+      
       <Navbar />
       <Routes>
         <Route exact path="/" element={<Home />} />
