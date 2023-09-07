@@ -1,3 +1,3 @@
+import ProjectCards from "./ProjectCards";
 import Card from "./card";
-
-export { Card };
+export { Card, ProjectCards };
