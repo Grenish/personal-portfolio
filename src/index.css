@@ -14,3 +14,19 @@
 ::-webkit-scrollbar-thumb{
     background: #EFDC9E;
 }
+
+.profile-image{
+    animation: fancyBorder 10s infinite linear;
+}
+
+@keyframes fancyBorder{
+    0%, 100%{
+        border-radius: 30% 70% 70% 30% / 30% 30% 70% 70% ;
+    }
+    40%{
+        border-radius: 70% 30% 50% 50% / 46% 27% 73% 54%  ;
+    }
+    80%{
+        border-radius: 60% 40% 63% 37% / 32% 66% 34% 68%  ;
+    }
+}
