@@ -2,9 +2,9 @@ import React from "react";
 import { grenish } from "../assets";
 import { SectionWrapper } from "../hoc";
 import { socialMediaLinks } from "../constants";
+import Tooltip from "@mui/material/Tooltip";
 
 const Home = () => {
-
   return (
     <div className="transition-colors ease-in-out">
       <SectionWrapper>
@@ -36,18 +36,20 @@ const Home = () => {
               Find me here
             </p>
             {socialMediaLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.link}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img
-                  src={link.icon}
-                  alt={link.name}
-                  className="w-11 bg-jet dark:bg-platinum p-2 rounded-full"
-                />
-              </a>
+              <Tooltip title={link.name} key={link.name}>
+                <a
+                  key={link.name}
+                  href={link.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src={link.icon}
+                    alt={link.name}
+                    className="w-11 bg-jet dark:bg-platinum p-2 rounded-full"
+                  />
+                </a>
+              </Tooltip>
             ))}
           </div>
         </div>
