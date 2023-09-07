@@ -1,16 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import { grenish } from "../assets";
 import { SectionWrapper } from "../hoc";
-import FolderIcon from "@mui/icons-material/Folder";
-import CloseIcon from "@mui/icons-material/Close";
 import { socialMediaLinks } from "../constants";
 
 const Home = () => {
-  const [isFolderOpen, setIsFolderOpen] = useState(false);
-
-  const toggleFolder = () => {
-    setIsFolderOpen(!isFolderOpen);
-  };
 
   return (
     <div className="transition-colors ease-in-out">
@@ -19,8 +12,8 @@ const Home = () => {
           <div>
             <img
               src={grenish}
-              alt=""
-              className="profile-image w-[150px] h-[150px] md:w-[250px] md:h-[250px] rounded-full object-cover border-4 border-jasmine dark:border-dark"
+              alt="An image of myself"
+              className="profile-image w-[150px] h-[150px] md:w-[250px] md:h-[250px] object-cover border-4 border-jasmine dark:border-dark"
             />
           </div>
           <div className="mt-4 space-y-2 font-sans">
