@@ -3,7 +3,8 @@ import { SectionWrapper } from "../hoc";
 import { grenish2 } from "../assets";
 import { Card } from "../card";
 import { techStack } from "../constants";
-
+import { html } from "../assets/tech";
+import { Transition } from "@headlessui/react";
 
 const About = () => {
   return (
@@ -29,17 +30,39 @@ const About = () => {
             <img
               src={grenish2}
               alt="An image of myself"
-              className="profile-image w-[250px] h-[250px] md:w-[250px] md:h-[250px] object-cover border-4 border-jasmine dark:border-dark"
+              className="profile-image w-[250px] h-[250px] md:w-[250px] md:h-[250px] object-cover border-4 border-saffron dark:border-dark"
             />
           </div>
         </div>
-        <div className="">
+        <div className="mt-5">
           <h2 className="text-3xl font font-extraBold text-platinum dark:text-night">
-            Tech I Use
+            Tools I Use
           </h2>
-          <div className="flex flex-wrap justify-center mt-4">
-            {techStack.map((tech) => (
-              <Card key={tech.name} name={tech.name} icon={tech.icon} />
+          <p className="text-gray-400 dark:text-gray-800 text-justify mt-4">
+            This is the technology stack I use the most on my daily work or just
+            for fun
+          </p>
+          <div className="grid grid-cols-1 gap-4 lg:grid-cols-2 lg:gap-8 mt-5">
+            {techStack.map((tech, index) => (
+              <Transition
+                show={true}
+                enter="transition-opacity duration-500"
+                enterFrom="opacity-0"
+                enterTo="opacity-100"
+                leave="transition-opacity duration-500"
+                leaveFrom="opacity-100"
+                leaveTo="opacity-0"
+                key={index}
+              >
+                <div className="mx-2">
+                  <Card
+                    name={tech.name}
+                    icon={tech.icon}
+                    desc={tech.desc}
+                    color={tech.color}
+                  />
+                </div>
+              </Transition>
             ))}
           </div>
         </div>
