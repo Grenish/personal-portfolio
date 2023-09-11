@@ -11,12 +11,14 @@ import {
   Error,
 } from "./components";
 import { Route, Routes, useLocation } from "react-router";
+import { Analytics } from "@vercel/analytics/react";
 
 const App = () => {
   const { pathname } = useLocation();
   return (
     <div className="bg-dark dark:bg-alabaster transition-colors">
       {pathname !== "/error" && pathname !== "/success" && <Navbar />}
+      <Analytics />
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
