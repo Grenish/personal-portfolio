@@ -7,6 +7,7 @@ import Home from "./Home";
 import BlogPosts from "./BlogPosts";
 import Success from "./Success";
 import Error from "./Error";
+import Cursor from "./Cursor";
 
 export {
   Navbar,
@@ -18,4 +19,5 @@ export {
   BlogPosts,
   Success,
   Error,
+  Cursor,
 };
