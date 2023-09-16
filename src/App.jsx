@@ -9,14 +9,17 @@ import {
   Projects,
   Success,
   Error,
+  Cursor
 } from "./components";
 import { Route, Routes, useLocation } from "react-router";
 import { Analytics } from "@vercel/analytics/react";
+
 
 const App = () => {
   const { pathname } = useLocation();
   return (
     <div className="bg-dark dark:bg-alabaster transition-colors">
+      <Cursor />
       {pathname !== "/error" && pathname !== "/success" && <Navbar />}
       <Analytics />
       <Routes>
