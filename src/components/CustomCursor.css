@@ -1,0 +1,16 @@
+.custom-cursor {
+  position: absolute;
+  z-index: 99999999;
+  pointer-events: none;
+  transition: transform 0.15s ease;
+}
+
+.default-cursor {
+  content: url("../assets/luffyDefault.png");
+  width: 50px;
+}
+
+.hover-cursor {
+  content: url("../assets/luffyHover.png");
+  width: 50px;
+}
