@@ -1,33 +1,22 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
-  ],
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   darkMode: "class",
   theme: {
     extend: {
       colors: {
-        platinum: "#CFDBD5",
-        alabaster: "#E8EDDF",
-        saffron: "#F5CB5C",
-        eerie: "#242423",
-        jet: "#333533",
-        vanilla: "#EFDC9E",
-        jasmine: "#F2D47D",
         dark: "#0D1821",
-        night: "#0C0F0A"
+        night: "#0C0F0A",
+        "white-100": "#FFFDF7",
+        "blue-100": "#0A2342",
+        "white-200": "#F6F7EB",
       },
       fontFamily: {
-        sans: ["Poppins", "sans-serif"],
-        mono: ['Source Code Pro', "monospace"],
-        cru: ['Coiny', 'cursive']
+        vibe: ["Great Vibes", "cursive"],
+        pop: ["Poppins", "sans-serif"],
+        sat: ["Satisfy", "cursive"],
       },
-      fontWeight: {
-        extraBold: 1000,
-      }
     },
   },
   plugins: [],
-}
-
+};
