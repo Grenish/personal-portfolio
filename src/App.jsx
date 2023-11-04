@@ -16,20 +16,9 @@ import { Analytics } from "@vercel/analytics/react";
 const App = () => {
   const { pathname } = useLocation();
   return (
-    <div className="bg-dark dark:bg-alabaster transition-colors">
-      {pathname !== "/error" && pathname !== "/success" && <Navbar />}
-      <Analytics />
-      <Routes>
-        <Route exact path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/blog" element={<BlogPosts />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/projects" element={<Projects />} />
-        {pathname === "/error" && <Route path="/error" element={<Error />} />}
-        {pathname === "/success" && (
-          <Route path="/success" element={<Success />} />
-        )}
-      </Routes>
+    <div>
+      <Navbar />
+      <Home />
       <Footer />
     </div>
   );
