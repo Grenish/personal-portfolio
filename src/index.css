@@ -1,11 +1,40 @@
 @import url("https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@100;300;400;500;600;700;800&family=Satisfy&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "TAN - PEARL";
+  src: url("fonts/TAN-PEARL-Regular.woff2") format("woff2"),
+    url("fonts/TAN-PEARL-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Ahsing";
+  src: url("fonts/Ahsing.woff2") format("woff2"),
+    url("fonts/Ahsing.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
-  background-color: #0D1821;
   color: #e2e2e2;
   overflow-x: hidden;
 }
+
+.tan {
+  font-family: "TAN - PEARL";
+}
+
+.cor {
+  font-family: "Cormorant Garamond", serif;
+}
+
+.ahs {
+  font-family: "Ahsing";
+}
+
