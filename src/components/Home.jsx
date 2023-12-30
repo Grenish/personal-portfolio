@@ -1,12 +1,6 @@
 import React from "react";
 import { UilLocationPoint, UilCodeBranch } from "@iconscout/react-unicons";
 
-const Bolb = () => {
-  return (
-    <div className="w-[500px] h-[500px] bg-rose-500 absolute rounded-full top-0 -left-10 blur-[400px]"></div>
-  );
-};
-
 const Home = () => {
   const currentWork = {
     title: "jujutsu-kaisen-wiki",
@@ -16,49 +10,54 @@ const Home = () => {
   };
 
   return (
-    <>
-      {/* <Bolb /> */}
-      <div className="w-full min-h-screen flex flex-col items-start justify-center bg-dark overflow-hidden">
-        <div className="w-full">
-          <div className="w-[70%] p-4 m-auto flex flex-col">
-            <span className="cor text-xl">Hello, there! I'm</span>
-            <span className="tan text-4xl pt-5 bg-gradient-to-r from-[#CCB3E8] via-[#FEACBE] to-[#C5F2DA] text-transparent bg-clip-text font-bold">
+    <div className=" bg-night relative z-0 overflow-hidden">
+      <div className="blob"></div>
+      <div className="w-full min-h-screen flex flex-col items-start justify-center  overflow-hidden">
+        <div className="w-full px-4  md:px-8 lg:px-16 xl:px-32">
+          <div className="sm:w-full md:w-10/12 lg:w-10/12 xl:w-4/5 px-4 mx-auto flex flex-col">
+            <span className="cor sm:text-xl text-base">Hello, there! I'm</span>
+            <h1 className="tan sm:text-4xl text-xl sm:pt-5 pt-2 bg-gradient-to-r from-[#fe4b8b] via-[#5BC4E6] to-[#FFEEC2] text-transparent bg-clip-text font-bold">
               Grenish Rai
-            </span>
-            <span className="cor mt-5 text-2xl text-gray-400">
+            </h1>
+            <span className="cor sm:mt-5 mt-2 sm:text-2xl text-xl text-gray-400">
               a passionate Full Stack Web Developer and creative Designer
               dedicated to simplifying the task and crafting fresh, enjoyable
               experiences for users.
             </span>
-            <div className="mt-5 flex w-[70%] justify-between gap-2">
-              <div className="flex flex-col w-[500px] ">
-                <span className="tan italic font-semibold flex gap-2">
+            <div className="mt-5 flex flex-col md:flex-row gap-4 md:gap-6">
+              <div className="flex flex-col w-[300px]">
+                <span className="tan italic font-semibold flex gap-2 sm:text-md text-sm">
                   currently <UilLocationPoint />
-                </span>{" "}
+                </span>
                 <span className="cor font-semibold text-gray-500 text-md">
                   Student
                 </span>
-                <span className="cor">
+                <span className="cor sm:text-md text-sm">
                   Sikkim Manipal Institute of Technology
                 </span>
-                <span className="cor">BCA</span>
+                <span className="cor sm:text-md text-sm">BCA</span>
               </div>
-              <div className="w-[600px] flex flex-col">
-                <span className="tan italic font-semibold ">
-                  <a href={currentWork.link} className="gap-2 inline-flex">
+              <div className="md:w-[300px] flex flex-col mt-4 md:mt-0">
+                <span className="tan italic font-semibold">
+                  <a
+                    href={currentWork.link}
+                    className="gap-2 inline-flex sm:text-md text-sm"
+                  >
                     working <UilCodeBranch />
                   </a>
-                </span>{" "}
-                <span className="cor font-semibold text-gray-500 text-md">
+                </span>
+                <span className="cor font-semibold text-gray-500 sm:text-md text-sm">
                   {currentWork.title}
                 </span>
-                <span className="cor">{currentWork.description}</span>
+                <span className="cor sm:text-md text-sm">
+                  {currentWork.description}
+                </span>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
