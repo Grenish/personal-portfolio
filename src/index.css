@@ -38,3 +38,143 @@ body {
   font-family: "Ahsing";
 }
 
+.blob {
+  width: 500px;
+  height: 1000px;
+  border-radius: 72% 28% 70% 30% / 54% 30% 70% 46%;
+  background: radial-gradient(
+      92.71% 92.71% at 7.59% 128.39%,
+      #ffeec2 0%,
+      rgba(255, 238, 194, 0.21) 60.42%,
+      rgba(194, 233, 255, 0) 100%
+    ),
+    radial-gradient(
+      49.19% 88.28% at 27.01% -13.54%,
+      rgba(93, 227, 236, 0.73) 0%,
+      rgba(93, 227, 236, 0.1679) 59.78%,
+      rgba(93, 227, 236, 0) 100%
+    ),
+    radial-gradient(
+      114.51% 155.86% at 90.18% 89.06%,
+      rgba(254, 75, 139, 0.7) 0%,
+      rgba(254, 75, 139, 0) 100%
+    ),
+    linear-gradient(
+      237.32deg,
+      #454abb 18.14%,
+      rgba(69, 74, 187, 0.76) 31.3%,
+      rgba(69, 74, 187, 0.39) 49.35%,
+      rgba(91, 196, 230, 0) 76.77%
+    ),
+    radial-gradient(
+      118.75% 118.75% at 3.35% 25.78%,
+      #308ee6 0%,
+      rgba(48, 158, 230, 0) 73.91%,
+      #f2f5fa
+    );
+  background-blend-mode: normal, hard-light, normal, darken, normal, normal;
+  filter: blur(100px);
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: -100px;
+  animation: bolbAnim 15s ease-in-out infinite;
+}
+
+@keyframes bolbAnim {
+  0%,
+  100% {
+    border-radius: 72% 28% 70% 30% / 54% 30% 70% 46%;
+    width: 500px;
+  }
+  40% {
+    border-radius: 75% 25% 70% 30% / 72% 81% 19% 28%;
+    width: 600px;
+  }
+  80% {
+    border-radius: 48% 52% 92% 8% / 9% 63% 37% 91%;
+    width: 700px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .blob {
+    width: 300px;
+    height: 1000px;
+  }
+  @keyframes bolbAnim {
+    0%,
+    100% {
+      border-radius: 72% 28% 70% 30% / 54% 30% 70% 46%;
+      width: 300px;
+    }
+    40% {
+      border-radius: 75% 25% 70% 30% / 72% 81% 19% 28%;
+      width: 400px;
+    }
+    80% {
+      border-radius: 48% 52% 92% 8% / 9% 63% 37% 91%;
+      width: 500px;
+    }
+  }
+}
+
+#checkbox {
+  display: none;
+}
+
+.toggle {
+  position: relative;
+  width: 40px;
+  height: 25px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  transition-duration: 0.5s;
+}
+
+.bars {
+  width: 70%;
+  height: 3px;
+  background-color: #ffeec2;
+  border-radius: 4px;
+}
+
+#bar2 {
+  transition-duration: 0.8s;
+}
+
+#bar1,
+#bar3 {
+  width: 30%;
+}
+
+#checkbox:checked + .toggle .bars {
+  position: absolute;
+  transition-duration: 0.5s;
+}
+
+#checkbox:checked + .toggle #bar2 {
+  transform: scaleX(0);
+  transition-duration: 0.5s;
+}
+
+#checkbox:checked + .toggle #bar1 {
+  width: 50%;
+  transform: rotate(45deg);
+  transition-duration: 0.5s;
+}
+
+#checkbox:checked + .toggle #bar3 {
+  width: 50%;
+  transform: rotate(-45deg);
+  transition-duration: 0.5s;
+}
+
+#checkbox:checked + .toggle {
+  transition-duration: 0.5s;
+  transform: rotate(180deg);
+}
