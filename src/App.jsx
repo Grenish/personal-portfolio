@@ -2,13 +2,12 @@ import React from "react";
 import {
   Navbar,
   About,
-  BlogPosts,
   Home,
   Contact,
   Footer,
   Projects,
-  Success,
-  Error,
+  Loader,
+  FeaturedWork
 } from "./components";
 import { Route, Routes, useLocation } from "react-router";
 import { Analytics } from "@vercel/analytics/react";
@@ -19,7 +18,7 @@ const App = () => {
     <div>
       <Navbar />
       <Home />
-      <Footer />
+      <FeaturedWork />
     </div>
   );
 };
