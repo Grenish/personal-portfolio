@@ -1,25 +1,12 @@
-import React, { useState, useEffect } from "react";
-
-const Hamburger = () => {
-
-  const [isOpen, setOpen] = useState(false);
-
-  return (
-    <button onClick={() => setOpen((prev) => !prev)} className="">
-      <input type="checkbox" id="checkbox" />
-      <label htmlFor="checkbox" className="toggle">
-        <div className="bars" id="bar1"></div>
-        <div className="bars" id="bar2"></div>
-        <div className="bars" id="bar3"></div>
-      </label>
-    </button>
-  );
-};
+import React, { useState } from "react";
 
 const Navbar = () => {
-
   const [isOpen, setOpen] = useState(false);
 
+  const toggleMenuOpen = () => {
+    setOpen((prevState) => !prevState);
+    console.log(isOpen);
+  };
 
   return (
     <header className="w-full p-4 fixed z-50 top-0 left-0">
@@ -35,13 +22,35 @@ const Navbar = () => {
             <li className="text-white-200 hover:text-gray-400 px-5 cursor-pointer cor text-sm font-semibold uppercase">
               Contact
             </li>
+            <li className="text-white-200 hover:text-gray-400 px-5 cursor-pointer cor text-sm font-semibold uppercase">
+              Resume
+            </li>
           </ul>
         </span>
 
-        <div className="block sm:hidden">
-          <Hamburger />
+        <div className="sm:hidden flex items-center justify-center">
+          <button aria-expanded={isOpen} className="">
+            <input type="checkbox" id="checkbox" onClick={toggleMenuOpen} />
+            <label htmlFor="checkbox" className="toggle">
+              <span className="bars" id="bar1"></span>
+              <span className="bars" id="bar2"></span>
+              <span className="bars" id="bar3"></span>
+            </label>
+          </button>
           {isOpen && (
-            <div className="absolute top-0 bg-rose-500">Hello World</div>
+            <span className=" bg-[#fe4b8a5e] backdrop-blur-sm rounded-xl absolute left-0 top-14 z-[999] w-full p-2 transition-all duration-300">
+              <ul className="flex items-center justify-around">
+                <li className="text-white-200 hover:text-gray-400 px-5 cursor-pointer cor text-sm font-semibold uppercase">
+                  About
+                </li>
+                <li className="text-white-200 hover:text-gray-400 px-5 cursor-pointer cor text-sm font-semibold uppercase">
+                  Contact
+                </li>
+                <li className="text-white-200 hover:text-gray-400 px-5 cursor-pointer cor text-sm font-semibold uppercase">
+                  Resume
+                </li>
+              </ul>
+            </span>
           )}
         </div>
       </nav>
