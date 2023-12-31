@@ -21,6 +21,50 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: "Ornamind";
+  src: url("fonts/Ornamind.woff2") format("woff2"),
+    url("fonts/Ornamind.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #ffeec2 #000;
+}
+
+/* Chrome, Edge and Safari */
+*::-webkit-scrollbar {
+  height: 2px;
+  width: 5px;
+}
+*::-webkit-scrollbar-track {
+  background-color: #000;
+}
+
+*::-webkit-scrollbar-track:hover {
+  background-color: #000;
+}
+
+*::-webkit-scrollbar-track:active {
+  background-color: #309ee6;
+}
+
+*::-webkit-scrollbar-thumb {
+  border-radius: 20px;
+  background-color: #ffeec2;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background-color: #ffeec2;
+}
+
+*::-webkit-scrollbar-thumb:active {
+  background-color: #ffeec2;
+}
+
 body {
   color: #e2e2e2;
   overflow-x: hidden;
@@ -36,6 +80,10 @@ body {
 
 .ahs {
   font-family: "Ahsing";
+}
+
+.des {
+  font-family: "Ornamind";
 }
 
 .blob {
@@ -177,4 +225,70 @@ body {
 #checkbox:checked + .toggle {
   transition-duration: 0.5s;
   transform: rotate(180deg);
+}
+
+/* Loader CSS */
+.loader {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: block;
+  margin: 15px auto;
+  position: relative;
+  color: #ffeec2;
+  left: -100px;
+  box-sizing: border-box;
+  animation: shadowRolling 3s linear infinite;
+}
+
+@keyframes shadowRolling {
+  0% {
+    box-shadow: 0px 0 rgba(255, 255, 255, 0), 0px 0 rgba(255, 255, 255, 0),
+      0px 0 rgba(255, 255, 255, 0), 0px 0 rgba(255, 255, 255, 0);
+  }
+  12% {
+    box-shadow: 100px 0 #ffeec2, 0px 0 rgba(255, 255, 255, 0),
+      0px 0 rgba(255, 255, 255, 0), 0px 0 rgba(255, 255, 255, 0);
+  }
+  25% {
+    box-shadow: 110px 0 #ffeec2, 100px 0 #ffeec2, 0px 0 rgba(255, 255, 255, 0),
+      0px 0 rgba(255, 255, 255, 0);
+  }
+  36% {
+    box-shadow: 120px 0 #ffeec2, 110px 0 #ffeec2, 100px 0 #ffeec2,
+      0px 0 rgba(255, 255, 255, 0);
+  }
+  50% {
+    box-shadow: 130px 0 #ffeec2, 120px 0 #ffeec2, 110px 0 #ffeec2,
+      100px 0 #ffeec2;
+  }
+  62% {
+    box-shadow: 200px 0 rgba(255, 255, 255, 0), 130px 0 #ffeec2, 120px 0 #ffeec2,
+      110px 0 #ffeec2;
+  }
+  75% {
+    box-shadow: 200px 0 rgba(255, 255, 255, 0), 200px 0 rgba(255, 255, 255, 0),
+      130px 0 #ffeec2, 120px 0 #ffeec2;
+  }
+  87% {
+    box-shadow: 200px 0 rgba(255, 255, 255, 0), 200px 0 rgba(255, 255, 255, 0),
+      200px 0 rgba(255, 255, 255, 0), 130px 0 #ffeec2;
+  }
+  100% {
+    box-shadow: 200px 0 rgba(255, 255, 255, 0), 200px 0 rgba(255, 255, 255, 0),
+      200px 0 rgba(255, 255, 255, 0), 200px 0 rgba(255, 255, 255, 0);
+  }
+}
+
+.glass {
+  background: rgba(255, 238, 194, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 10px;
+}
+
+::selection {
+  background: #ffeec2e6;
+  color: #0d1821;
 }
