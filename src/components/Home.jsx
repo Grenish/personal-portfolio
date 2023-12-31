@@ -19,7 +19,7 @@ const Home = () => {
             <h1 className="tan sm:text-4xl text-xl sm:pt-5 pt-2 bg-gradient-to-r from-[#fe4b8b] via-[#5BC4E6] to-[#FFEEC2] text-transparent bg-clip-text font-bold">
               Grenish Rai
             </h1>
-            <span className="cor sm:mt-5 mt-2 sm:text-2xl text-xl text-gray-400">
+            <span className="cor sm:mt-5 mt-2 sm:text-2xl text-xl text-gray-300">
               a passionate Full Stack Web Developer and creative Designer
               dedicated to simplifying the task and crafting fresh, enjoyable
               experiences for users.
