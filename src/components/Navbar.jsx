@@ -5,7 +5,6 @@ const Navbar = () => {
 
   const toggleMenuOpen = () => {
     setOpen((prevState) => !prevState);
-    console.log(isOpen);
   };
 
   return (
