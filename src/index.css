@@ -126,7 +126,7 @@ body {
   z-index: -1;
   top: 0;
   left: -100px;
-  animation: bolbAnim 15s ease-in-out infinite;
+  /* animation: bolbAnim 15s ease-in-out infinite; */
 }
 
 @keyframes bolbAnim {
@@ -315,7 +315,7 @@ body {
 
 .hamburger-label span {
   height: 5px;
-  background-color: #5BC4E6;
+  background-color: #5bc4e6;
   position: absolute;
 }
 
@@ -349,4 +349,10 @@ body {
 #label-check:checked + .hamburger-label .line3 {
   transform: rotate(35deg) scaleX(0.55) translate(-39px, 4.5px);
   border-radius: 0 50px 50px 50px;
+}
+
+.neo {
+  border-radius: 50px;
+  background: #ffeec2;
+  box-shadow: 20px 20px 60px #d9caa5, -20px -20px 60px #ffffdf;
 }
