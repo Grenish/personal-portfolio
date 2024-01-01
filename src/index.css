@@ -292,3 +292,61 @@ body {
   background: #ffeec2e6;
   color: #0d1821;
 }
+
+/* Next Button */
+
+.container {
+  width: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.label-check {
+  display: none;
+}
+
+.hamburger-label {
+  width: 60px;
+  height: 48px;
+  display: block;
+  cursor: pointer;
+}
+
+.hamburger-label span {
+  height: 5px;
+  background-color: #5BC4E6;
+  position: absolute;
+}
+
+.line1 {
+  transform: rotate(35deg) scaleX(0.55) translate(39px, -4.5px);
+  border-radius: 50px 50px 50px 0;
+  transition: all 0.3s;
+  width: 60px;
+}
+
+.line2 {
+  margin: 18px 0 0 0;
+  transition: 0.3s;
+  border-radius: 50px;
+  width: 60px;
+}
+
+.line3 {
+  transform: rotate(-35deg) scaleX(0.55) translate(39px, 4.5px);
+  border-radius: 0 50px 50px 50px;
+  margin: 36px 0 0 0;
+  transition: 0.3s;
+  width: 60px;
+}
+
+#label-check:checked + .hamburger-label .line1 {
+  transform: rotate(-35deg) scaleX(0.55) translate(-39px, -4.5px);
+  border-radius: 50px 50px 50px 0;
+}
+
+#label-check:checked + .hamburger-label .line3 {
+  transform: rotate(35deg) scaleX(0.55) translate(-39px, 4.5px);
+  border-radius: 0 50px 50px 50px;
+}
