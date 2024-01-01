@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import { zane, exsolve } from "../assets/projects";
+import { zane, luna } from "../assets/projects";
 import { motion } from "framer-motion";
+import { UilExternalLinkAlt, UilCodeBranch } from "@iconscout/react-unicons";
 
 const FeaturedWork = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -14,15 +15,19 @@ const FeaturedWork = () => {
       title: "Luna",
       description:
         "Luna is a chatbot fine-tuned from the PaLM (Pathway Language Model) model. It is still in beta testing, but it can already perform a variety of tasks.",
-      image: zane,
-      tags: ["React", "TailwindCSS", "ExpressJs", "API", "Vercel"],
+      image: luna,
+      tags: ["React", "TailwindCSS", "ExpressJs", "API", "Vercel", "Nodejs"],
+      link: "https://chatluna.vercel.app/",
+      github: "https://github.com/Grenish/luna",
     },
     {
       title: "Zane",
       description:
         "Luna is a chatbot fine-tuned from the PaLM (Pathway Language Model) model. It is still in beta testing, but it can already perform a variety of tasks.",
-      image: exsolve,
+      image: zane,
       tags: ["React", "TailwindCSS", "ExpressJs", "API", "Vercel"],
+      link: "https://chatluna.vercel.app/",
+      github: "https://github.com/Grenish/luna",
     },
   ];
 
@@ -39,7 +44,7 @@ const FeaturedWork = () => {
           <div className="sm:text-[42px] text-2xl tan font-semibold text-dark">
             Featured Work{" "}
           </div>{" "}
-          <span className="des sm:text-[42px] text-2xl text-night font-bold">
+          <span className="des sm:text-[42px] pointer-events-none text-2xl text-night font-bold">
             r
           </span>
         </div>
@@ -57,23 +62,44 @@ const FeaturedWork = () => {
               <img
                 src={work.image}
                 alt={work.title}
-                className=" sm:w-1/2 w-full object-cover rounded-3xl"
+                className=" sm:w-1/2 w-full h-[350px] object-cover rounded-3xl"
               />
 
               <div className="flex flex-col sm:w-1/3 w-full sm:mt-0 mt-5">
-                <span className="text-3xl text-dark tan font-bold">
+                <span className="text-3xl text-dark tan font-bold inline-flex items-center gap-2">
                   {work.title}
+                  <a href={work.link} target="_blank">
+                    <span className="group relative">
+                      <UilExternalLinkAlt />
+                      <span className="neo text-xs p-2 absolute group-hover:opacity-100 opacity-0 transition-all duration-300">
+                        Visit
+                      </span>
+                    </span>
+                  </a>{" "}
+                  <span className="bg-rose-500 w-[1px] h-7"></span>{" "}
+                  <a href={work.github} target="_blank">
+                    <span className="group relative">
+                      <UilCodeBranch />
+                      <span className="neo text-xs p-2 absolute group-hover:opacity-100 opacity-0 transition-all duration-300">
+                        Github
+                      </span>
+                    </span>
+                  </a>
                 </span>
                 <span className="text-night cor mt-3">{work.description}</span>
-                <span className="text-dark cor text-sm mt-3">
-                  {work.tags.map((tag, tagIndex) => (
-                    <span
-                      key={tagIndex}
-                      className="cor text-sm mr-2 bg-dark text-white-200 px-2 rounded"
-                    >
-                      {tag}
-                    </span>
-                  ))}
+                <span className="text-dark cor text-sm w-full space-y-2">
+                  <span className="text-dark -mx-2 cor text-sm mt-3 w-full inline-flex flex-wrap">
+                    {work.tags.map((tag, tagIndex) => (
+                      <React.Fragment key={tagIndex}>
+                        {tagIndex > 0 && (
+                          <span className="cor text-sm">//</span>
+                        )}
+                        <span className="cor text-sm text-dark px-2 rounded">
+                          {tag}
+                        </span>
+                      </React.Fragment>
+                    ))}
+                  </span>
                 </span>
               </div>
             </motion.div>

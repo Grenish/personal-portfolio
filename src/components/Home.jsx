@@ -15,7 +15,7 @@ const Home = () => {
       <div className="w-full min-h-screen flex flex-col items-start justify-center  overflow-hidden">
         <div className="w-full px-4  md:px-8 lg:px-16 xl:px-32">
           <div className="sm:w-full md:w-10/12 lg:w-10/12 xl:w-4/5 px-4 mx-auto flex flex-col">
-            <span className="cor sm:text-xl text-base">Hello, there! I'm</span>
+            <span className="cor sm:text-xl text-base">Hi, there! I'm</span>
             <h1 className="tan sm:text-4xl text-xl sm:pt-5 pt-2 bg-gradient-to-r from-[#fe4b8b] via-[#5BC4E6] to-[#FFEEC2] text-transparent bg-clip-text font-bold">
               Grenish Rai
             </h1>

@@ -19,7 +19,7 @@ const Navbar = () => {
               About
             </li>
             <li className="text-white-200 hover:text-gray-400 px-5 cursor-pointer cor text-sm font-semibold uppercase">
-              Contact
+              Work
             </li>
             <li className="text-white-200 hover:text-gray-400 px-5 cursor-pointer cor text-sm font-semibold uppercase">
               Resume
@@ -43,7 +43,7 @@ const Navbar = () => {
                   About
                 </li>
                 <li className="text-white-200 hover:text-gray-400 px-5 cursor-pointer cor text-sm font-semibold uppercase">
-                  Contact
+                  Work
                 </li>
                 <li className="text-white-200 hover:text-gray-400 px-5 cursor-pointer cor text-sm font-semibold uppercase">
                   Resume
