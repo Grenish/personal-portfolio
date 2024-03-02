@@ -16,7 +16,7 @@ const FeaturedWork = () => {
       description:
         "Luna is a chatbot fine-tuned from the PaLM (Pathway Language Model) model. It is still in beta testing, but it can already perform a variety of tasks.",
       image: luna,
-      tags: ["React", "TailwindCSS", "ExpressJs", "API", "Vercel", "Nodejs"],
+      tags: ["React", "TailwindCSS", "Express.js", "API", "Nodejs"],
       link: "https://chatluna.vercel.app/",
       github: "https://github.com/Grenish/luna",
     },
@@ -25,7 +25,7 @@ const FeaturedWork = () => {
       description:
         "Luna is a chatbot fine-tuned from the PaLM (Pathway Language Model) model. It is still in beta testing, but it can already perform a variety of tasks.",
       image: zane,
-      tags: ["React", "TailwindCSS", "ExpressJs", "API", "Vercel"],
+      tags: ["React", "TailwindCSS"],
       link: "https://chatluna.vercel.app/",
       github: "https://github.com/Grenish/luna",
     },
@@ -59,11 +59,13 @@ const FeaturedWork = () => {
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5 }}
             >
-              <img
-                src={work.image}
-                alt={work.title}
-                className=" sm:w-1/2 w-full h-[350px] object-cover rounded-3xl"
-              />
+              <div className=" sm:w-1/2 w-full h-[350px] overflow-hidden rounded-3xl group">
+                <img
+                  src={work.image}
+                  alt={work.title}
+                  className=" w-full h-[350px] object-cover object-center rounded-3xl sm:group-hover:scale-150 group-hover:scale-[2.5] sm:group-hover:translate-y-20 group-hover:translate-y-[9rem] transition-all sm:duration-500 duration-1000"
+                />
+              </div>
 
               <div className="flex flex-col sm:w-1/3 w-full sm:mt-0 mt-5">
                 <span className="text-3xl text-dark tan font-bold inline-flex items-center gap-2">

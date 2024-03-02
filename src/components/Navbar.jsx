@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [isOpen, setOpen] = useState(false);
@@ -11,12 +12,12 @@ const Navbar = () => {
     <header className="w-full p-4 fixed z-50 top-0 left-0">
       <nav className="w-[90%] m-auto flex items-center justify-between relative">
         <span className="text-[32px] w-auto ahs cursor-pointer text-white-200 hover:text-gray-400">
-          Gr
+          <Link to="/">Gr</Link>
         </span>
         <span>
           <ul className="sm:flex hidden items-center">
             <li className="text-white-200 hover:text-gray-400 px-5 cursor-pointer cor text-sm font-semibold uppercase">
-              About
+              <Link to="/about">About</Link>
             </li>
             <li className="text-white-200 hover:text-gray-400 px-5 cursor-pointer cor text-sm font-semibold uppercase">
               Work

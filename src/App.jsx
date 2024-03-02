@@ -7,7 +7,7 @@ import {
   Footer,
   Projects,
   Loader,
-  FeaturedWork
+  FeaturedWork,
 } from "./components";
 import { Route, Routes, useLocation } from "react-router";
 import { Analytics } from "@vercel/analytics/react";
@@ -17,9 +17,14 @@ const App = () => {
   return (
     <div>
       <Navbar />
-      <Home />
-      <FeaturedWork />
-      {/* <Footer /> */}
+      {/* <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/" element={<FeaturedWork />} />
+        <Route path="/about" element={<About />} />
+      </Routes> */}
+      <Home/>
+      <FeaturedWork/>
+      <Footer />
     </div>
   );
 };

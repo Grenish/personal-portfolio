@@ -42,6 +42,7 @@ const Home = () => {
                   <a
                     href={currentWork.link}
                     className="gap-2 inline-flex sm:text-md text-sm"
+                    target="_blank"
                   >
                     working <UilCodeBranch />
                   </a>

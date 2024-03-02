@@ -126,7 +126,7 @@ body {
   z-index: -1;
   top: 0;
   left: -100px;
-  /* animation: bolbAnim 15s ease-in-out infinite; */
+  /* animation: bolbAnim 10s ease-in-out infinite; */
 }
 
 @keyframes bolbAnim {
