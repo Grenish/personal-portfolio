@@ -107,7 +107,7 @@ const FeaturedWork = () => {
             </motion.div>
           ))}
         </div>
-        <div className="w-full p-2  flex items-center justify-center mt-10">
+        <div className="w-full p-2  flex items-center justify-center mt-2 sm:mt-10 ">
           <div className="container">
             <input
               className="label-check"
