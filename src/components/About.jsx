@@ -2,7 +2,7 @@ import React from 'react'
 
 const About = () => {
   return (
-    <div>
+    <div className='bg-night w-full h-screen'>
       About
     </div>
   )
