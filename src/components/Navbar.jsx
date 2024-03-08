@@ -1,11 +1,17 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { UilAngleDown, UilAngleUp } from "@iconscout/react-unicons";
 
 const Navbar = () => {
   const [isOpen, setOpen] = useState(false);
+  const [isSocialOpen, setSocialOpen] = useState(false);
 
   const toggleMenuOpen = () => {
     setOpen((prevState) => !prevState);
+  };
+
+  const toggleSocialOpen = () => {
+    setSocialOpen((prevState) => !prevState);
   };
 
   return (
@@ -22,6 +28,23 @@ const Navbar = () => {
             <li className="text-white-200 hover:text-gray-400 px-5 cursor-pointer cor text-sm font-semibold uppercase">
               Work
             </li>
+            <li
+              onClick={toggleSocialOpen}
+              className="text-white-200  hover:text-gray-400 px-5 cursor-pointer cor text-sm font-semibold uppercase flex items-center"
+            >
+              Socials{" "}
+              {isSocialOpen ? (
+                <UilAngleUp size={20} />
+              ) : (
+                <UilAngleDown size={20} />
+              )}
+              {isSocialOpen && (
+                <div className="absolute top-10">
+                  <li>GitHub</li>
+                </div>
+              )}
+            </li>
+
             <li className="text-white-200 hover:text-gray-400 px-5 cursor-pointer cor text-sm font-semibold uppercase">
               Resume
             </li>
@@ -38,13 +61,16 @@ const Navbar = () => {
             </label>
           </button>
           {isOpen && (
-            <span className=" bg-[#fe4b8a5e] backdrop-blur-sm rounded-xl absolute left-0 top-14 z-[999] w-full p-2 transition-all duration-300">
+            <span className="  backdrop-blur-sm rounded-xl absolute left-0 top-14 z-[999] w-full p-2 transition-all duration-300">
               <ul className="flex items-center justify-around">
                 <li className="text-white-200 hover:text-gray-400 px-5 cursor-pointer cor text-sm font-semibold uppercase">
                   About
                 </li>
                 <li className="text-white-200 hover:text-gray-400 px-5 cursor-pointer cor text-sm font-semibold uppercase">
                   Work
+                </li>
+                <li className="text-white-200 hover:text-gray-400 px-5 cursor-pointer cor text-sm font-semibold uppercase">
+                  Socials
                 </li>
                 <li className="text-white-200 hover:text-gray-400 px-5 cursor-pointer cor text-sm font-semibold uppercase">
                   Resume
