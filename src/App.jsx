@@ -17,13 +17,11 @@ const App = () => {
   return (
     <div>
       <Navbar />
-      {/* <Routes>
+      <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/" element={<FeaturedWork />} />
         <Route path="/about" element={<About />} />
-      </Routes> */}
-      <Home/>
-      <FeaturedWork/>
+      </Routes>
+      {pathname !== '/about' && <FeaturedWork />}
       <Footer />
     </div>
   );
