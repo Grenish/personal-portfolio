@@ -42,7 +42,7 @@ const Projects = () => {
       ></div>
       <div className="h-screen">
         <div className="h-full flex flex-col items-center justify-center ">
-          {/* <div className="tan sm:text-8xl text-4xl relative group">
+          <div className="tan sm:text-8xl text-4xl relative group">
             <span className="absolute -left-1 -top-1 text-night blur-[2.5px] font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-200 ease-in-0ut sm:ml-6 ml-0 pointer-events-none">
               <span className="des">s</span>
               Projects
@@ -53,9 +53,9 @@ const Projects = () => {
               Projects
               <span className="des">D</span>
             </span>
-          </div> */}
+          </div>
 
-          <span className="tan">Projects</span>
+          {/* <span className="tan">Projects</span> */}
         </div>
         <button
           onClick={toggleShutter}
