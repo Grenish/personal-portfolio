@@ -1,7 +1,6 @@
 import React from "react";
 import {
   Navbar,
-  About,
   Home,
   Contact,
   Footer,
@@ -19,9 +18,9 @@ const App = () => {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
+        <Route path="/work" element={<Projects />} />
       </Routes>
-      {pathname !== '/about' && <FeaturedWork />}
+      {pathname !== "/work" && <FeaturedWork />}
       <Footer />
     </div>
   );
