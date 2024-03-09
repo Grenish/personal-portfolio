@@ -8,7 +8,7 @@ export default {
         dark: "#0D1821",
         night: "#0C0F0A",
         "white-100": "#FFFDF7",
-        "blue-100": "#0A2342",
+        "blue-10": "#0A2342",
         "white-200": "#F6F7EB",
       },
       fontFamily: {
