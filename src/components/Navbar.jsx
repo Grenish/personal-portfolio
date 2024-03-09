@@ -14,6 +14,25 @@ const Navbar = () => {
     setSocialOpen((prevState) => !prevState);
   };
 
+  const socials = [
+    {
+      name: "GitHub",
+      link: "https://github.com/Grenish",
+    },
+    {
+      name: "Instagram",
+      link: "https://www.instagram.com/grenish_rai/",
+    },
+    {
+      name: "X",
+      link: "https://twitter.com/grenish_rai",
+    },
+    {
+      name: "LinkedIn",
+      link: "https://www.linkedin.com/in/grenish-rai/",
+    },
+  ];
+
   return (
     <header className="w-full p-4 fixed z-50 top-0 left-0">
       <nav className="w-[90%] m-auto flex items-center justify-between relative">
@@ -23,27 +42,37 @@ const Navbar = () => {
         <span>
           <ul className="sm:flex hidden items-center">
             <li className="text-white-200 hover:text-gray-400 px-5 cursor-pointer cor text-sm font-semibold uppercase">
-              <Link to="/about">About</Link>
+              <Link to="/work">Work</Link>
             </li>
-            <li className="text-white-200 hover:text-gray-400 px-5 cursor-pointer cor text-sm font-semibold uppercase">
-              Work
-            </li>
-            <li
-              onClick={toggleSocialOpen}
-              className="text-white-200  hover:text-gray-400 px-5 cursor-pointer cor text-sm font-semibold uppercase flex items-center"
-            >
-              Socials{" "}
-              {isSocialOpen ? (
-                <UilAngleUp size={20} />
-              ) : (
-                <UilAngleDown size={20} />
-              )}
+            <div className="">
+              <li
+                onClick={toggleSocialOpen}
+                className="text-white-200  hover:text-gray-400 px-5 cursor-pointer cor text-sm font-semibold uppercase flex items-center"
+              >
+                Socials{" "}
+                {isSocialOpen ? (
+                  <UilAngleUp size={20} />
+                ) : (
+                  <UilAngleDown size={20} />
+                )}
+              </li>
               {isSocialOpen && (
-                <div className="absolute top-10">
-                  <li>GitHub</li>
+                <div className="absolute top-10 cor ml-3 p-3 backdrop-blur-xl rounded-xl">
+                  {socials.map((socials, index) => {
+                    return (
+                      <li
+                        key={index}
+                        className="text-white-200  hover:text-gray-400 my-3"
+                      >
+                        <a href={socials.link} target="_blank">
+                          {socials.name}
+                        </a>
+                      </li>
+                    );
+                  })}
                 </div>
               )}
-            </li>
+            </div>
 
             <li className="text-white-200 hover:text-gray-400 px-5 cursor-pointer cor text-sm font-semibold uppercase">
               Resume
@@ -64,14 +93,37 @@ const Navbar = () => {
             <span className="  backdrop-blur-sm rounded-xl absolute left-0 top-14 z-[999] w-full p-2 transition-all duration-300">
               <ul className="flex items-center justify-around">
                 <li className="text-white-200 hover:text-gray-400 px-5 cursor-pointer cor text-sm font-semibold uppercase">
-                  About
-                </li>
-                <li className="text-white-200 hover:text-gray-400 px-5 cursor-pointer cor text-sm font-semibold uppercase">
                   Work
                 </li>
-                <li className="text-white-200 hover:text-gray-400 px-5 cursor-pointer cor text-sm font-semibold uppercase">
-                  Socials
-                </li>
+                <div className="">
+                  <li
+                    onClick={toggleSocialOpen}
+                    className="text-white-200  hover:text-gray-400 px-5 cursor-pointer cor text-sm font-semibold uppercase flex items-center"
+                  >
+                    Socials{" "}
+                    {isSocialOpen ? (
+                      <UilAngleUp size={20} />
+                    ) : (
+                      <UilAngleDown size={20} />
+                    )}
+                  </li>
+                  {isSocialOpen && (
+                    <div className="sm:block sm:w-auto w-full justify-between left-0 flex absolute top-10 cor sm:ml-3 ml-0 p-3">
+                      {socials.map((socials, index) => {
+                        return (
+                          <li
+                            key={index}
+                            className="text-white-200  hover:text-gray-400 my-3"
+                          >
+                            <a href={socials.link} target="_blank">
+                              {socials.name}
+                            </a>
+                          </li>
+                        );
+                      })}
+                    </div>
+                  )}
+                </div>
                 <li className="text-white-200 hover:text-gray-400 px-5 cursor-pointer cor text-sm font-semibold uppercase">
                   Resume
                 </li>
