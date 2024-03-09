@@ -93,7 +93,7 @@ const Navbar = () => {
             <span className="  backdrop-blur-sm rounded-xl absolute left-0 top-14 z-[999] w-full p-2 transition-all duration-300">
               <ul className="flex items-center justify-around">
                 <li className="text-white-200 hover:text-gray-400 px-5 cursor-pointer cor text-sm font-semibold uppercase">
-                  Work
+                  <Link to="/work">Work</Link>
                 </li>
                 <div className="">
                   <li
