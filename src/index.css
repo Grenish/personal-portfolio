@@ -356,3 +356,37 @@ body {
   background: #ffeec2;
   box-shadow: 20px 20px 60px #d9caa5, -20px -20px 60px #ffffdf;
 }
+
+.scroll {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #F6F7EB;
+  border-radius: 50%;
+  position: relative;
+  animation: down 1.5s infinite;
+  -webkit-animation: down 1.5s infinite;
+}
+
+.scroll::before {
+  content: "";
+  position: absolute;
+  top: 5.5px;
+  left: 4.7px;
+  width: 8px;
+  height: 8px;
+  border-left: 2px solid #F6F7EB;
+  border-top: 2px solid #F6F7EB;
+  transform: rotate(45deg);
+}
+
+@keyframes down {
+  0% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translateY(15px);
+  }
+  40% {
+    transform: translate(0);
+  }
+}
