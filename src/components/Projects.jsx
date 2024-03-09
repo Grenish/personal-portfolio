@@ -61,13 +61,13 @@ const Projects = () => {
           onClick={toggleShutter}
           className="mt-16 absolute z-[999] bottom-5 flex justify-center items-center w-full"
         >
-          <UilArrowCircleUp />
+          {isShutterOpen ? <UilArrowCircleDown /> : <UilArrowCircleUp />}
         </button>
       </div>
       {isShutterOpen ? (
-        <div className="absolute w-full h-[20px] bg-rose-500 transition-all duration-200 ease-linear opacity-10 bottom-0"></div>
-      ) : (
         <div className="absolute w-full h-[50vh] bg-rose-500 transition-all duration-200 ease-linear opacity-10 bottom-0 z-[99]"></div>
+      ) : (
+        <div className="absolute w-full h-[20px] bg-rose-500 transition-all duration-200 ease-linear opacity-10 bottom-0"></div>
       )}
     </div>
   );
