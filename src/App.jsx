@@ -1,14 +1,12 @@
 import React from "react";
 import {
   Navbar,
-  About,
-  BlogPosts,
   Home,
   Contact,
   Footer,
   Projects,
-  Success,
-  Error,
+  Loader,
+  FeaturedWork,
 } from "./components";
 import { Route, Routes, useLocation } from "react-router";
 import { Analytics } from "@vercel/analytics/react";
@@ -16,20 +14,14 @@ import { Analytics } from "@vercel/analytics/react";
 const App = () => {
   const { pathname } = useLocation();
   return (
-    <div className="bg-dark dark:bg-alabaster transition-colors">
-      {pathname !== "/error" && pathname !== "/success" && <Navbar />}
+    <div>
+      <Navbar />
       <Analytics />
       <Routes>
-        <Route exact path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/blog" element={<BlogPosts />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/projects" element={<Projects />} />
-        {pathname === "/error" && <Route path="/error" element={<Error />} />}
-        {pathname === "/success" && (
-          <Route path="/success" element={<Success />} />
-        )}
+        <Route path="/" element={<Home />} />
+        <Route path="/work" element={<Projects />} />
       </Routes>
+      {pathname !== "/work" && <FeaturedWork />}
       <Footer />
     </div>
   );

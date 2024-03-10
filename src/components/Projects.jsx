@@ -1,57 +1,169 @@
-import React from "react";
-import { SectionWrapper } from "../hoc";
-import { projects } from "../constants";
-
-const ProjectCards = ({ id, name, image, desc, url }) => {
-  return (
-    <div>
-      <div className="relative group border-4 cursor-pointer overflow-hidden border-vanilla dark:border-saffron rounded-2xl p-3 h-full dark:text-gray-100 md:h-3/4">
-        <a href={url} key={id} target="_blank">
-          <img
-            src={image}
-            alt={name}
-            className="w-full h-full object-cover rounded-lg transform transition-all duration-200 ease-linear group-hover:opacity-25 group-hover:scale-110"
-          />
-          <div className="absolute inset-0 bg-transparent bg-opacity-25 flex flex-col items-center justify-center transition-all duration-200 group-hover:bg-transparent">
-            <h2 className="sm:text-xl text-lg border-4 bg-[#3335334a] backdrop-blur-sm group-hover:backdrop-blur-none group-hover:bg-transparent border-jasmine dark:bg-[#EFDC9E4a] group-hover:border-transparent dark:text-night group-hover:text-platinum group-hover:dark:text-jet p-2 rounded-xl md:text-3xl text-alabaster font-bold">
-              {name}
-            </h2>
-            <p className="text-xs opacity-0 group-hover:opacity-100 md:text-sm text-platinum dark:text-jet">
-              {desc}
-            </p>
-          </div>
-        </a>
-      </div>
-    </div>
-  );
-};
+import React, { useEffect, useRef, useState } from "react";
+import { UilArrowCircleUp, UilArrowCircleDown } from "@iconscout/react-unicons";
+import {
+  luna,
+  zane,
+  codersclub,
+  webchitchat,
+  dashboard,
+  imageflex,
+} from "../assets/projects";
+import { Carousel } from "@material-tailwind/react";
 
 const Projects = () => {
+  const divRef = useRef(null);
+  const [isShutterOpen, setShutterOpen] = useState(false);
+
+  useEffect(() => {
+    let timeoutId;
+
+    const followCursor = (e) => {
+      clearTimeout(timeoutId);
+
+      timeoutId = setTimeout(() => {
+        const div = divRef.current;
+        if (div) {
+          const mouseX = e.pageX;
+          const mouseY = e.pageY;
+          div.style.left = mouseX - div.offsetWidth / 2 + "px";
+          div.style.top = mouseY - div.offsetHeight / 2 + "px";
+        }
+      }, 10);
+    };
+
+    document.addEventListener("mousemove", followCursor);
+
+    return () => {
+      document.removeEventListener("mousemove", followCursor);
+    };
+  }, []);
+
+  const toggleShutter = () => {
+    setShutterOpen((prevState) => !prevState);
+  };
+
+  const projects = [
+    {
+      name: "Zane",
+      image: zane,
+      description:
+        "ZANE is a mockup chatbot.",
+      stack: "React // TailwindCSS",
+    },
+    {
+      name: "Luna",
+      image: luna,
+      description:
+        "Luna is a chatbot fine-tuned from the PaLM (Pathway Language Model) model. It is still in beta testing, but it can already perform a variety of tasks.",
+      stack: "React // TailwindCSS // Express.js // API // Nodejs",
+    },
+    {
+      name: "Dashboard",
+      image: dashboard,
+      description:
+        "This project is a mockup project of company or personal dashboard.",
+      stack: "React // TailwindCSS",
+    },
+    {
+      name: "ChitChat",
+      image: webchitchat,
+      description:
+        "ChitChat is an SPA (Single Page Application) that allows users to chat with each other in real-time.",
+      stack: "React // TailwindCSS // SocketIo // Nodejs // Express",
+    },
+    {
+      name: "ImageFlex",
+      image: imageflex,
+      description:
+        "ImageFlex is a website to download the best quality images online.",
+      stack: "HTML // CSS // JavaScript // API",
+    },
+    {
+      name: "CodersClub",
+      image: codersclub,
+      description:
+        "This is an exclusive website for the coding club of SMIT, Sikkim Manipal Institute of Technology",
+      stack: "React // TailwindCSS // Nodejs",
+    },
+  ];
+
   return (
-    <div>
-      <SectionWrapper>
-        <div className="mb-10">
-          <h2 className="text-3xl font font-extraBold text-platinum dark:text-night mb-4">
-            My Works
-          </h2>
-          <p className="text-gray-400 dark:text-gray-800 text-justify mt-4">
-            Here are some of the projects I have worked on.
-          </p>
+    <div className="w-full bg-night relative">
+      <div
+        ref={divRef}
+        className="absolute z-1 w-[150px] h-[150px] bg-gradient-to-r from-[#ffeec2] scale-100 to-indigo-700 transition-all blur-3xl rounded-full"
+      ></div>
+
+      <div className="h-screen">
+        <div className="h-full flex flex-col items-center justify-center ">
+          <div className="tan sm:text-8xl text-4xl relative group">
+            <span className="absolute -left-1 -top-1 text-night blur-[2.5px] font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-200 ease-in-0ut sm:ml-6 ml-0 pointer-events-none">
+              <span className="des">s</span>
+              Projects
+              <span className="des">D</span>
+            </span>
+            <span className="relative sm:ml-6 ml-0 pointer-events-none">
+              <span className="des">s</span>
+              Projects
+              <span className="des">D</span>
+            </span>
+          </div>
         </div>
-        <div className=" flex flex-col justify-center items-center space-y-5">
-          {projects.map((project) => {
-            return (
-              <ProjectCards
-                key={project.id}
-                name={project.name}
-                image={project.image}
-                desc={project.desc}
-                url={project.url}
-              />
-            );
-          })}
+        <button
+          onClick={toggleShutter}
+          className="mt-16 absolute z-[999] bottom-5 flex justify-center items-center w-full"
+        >
+          {isShutterOpen ? <UilArrowCircleDown /> : <UilArrowCircleUp />}
+        </button>
+      </div>
+      {isShutterOpen ? (
+        <div className="absolute w-full sm:h-[50vh] h-[70vh] px-2 transition-all duration-200 ease-linear bottom-0 z-[99]">
+          <Carousel className="overflow-hidden">
+            {projects.map((project, index) => (
+              <div className="w-full h-full bg-[#fffdf734] rounded-t-xl flex flex-row justify-center items-center backdrop-blur-sm text-dark overflow-hidden">
+                <div
+                  key={index}
+                  className="sm:w-[80%] overflow-hidden w-full sm:h-auto h-full p-2 flex sm:flex-row flex-col opacity-100 transition-opacity delay-300 ease-in-out"
+                >
+                  <div className="sm:w-[500px] w-full sm:h-[250px] h-[190px] overflow-hidden rounded-xl ">
+                    <img
+                      src={project.image}
+                      alt=""
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div className="sm:ml-10 ml-0 sm:mt-0 mt-5 flex flex-col sm:w-1/2 w-full text-white-100">
+                    <span className="tan sm:text-5xl text-xl">
+                      {project.name}
+                    </span>
+                    <span className="mt-5 cor">{project.description}</span>
+                    <span className="mt-5 text-sm cor">{project.stack}</span>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </Carousel>
         </div>
-      </SectionWrapper>
+      ) : (
+        <div className="absolute w-full h-[20px] px-2 transition-all duration-200 ease-linear bottom-0">
+          <div className="w-full h-full bg-[#fffdf734] rounded-t-xl flex justify-center items-center text-dark overflow-hidden">
+            <div className="sm:w-[80%] w-full sm:h-auto h-full p-2 flex sm:flex-row flex-col opacity-0 transition-opacity duration-150 ease-in-out">
+              <div className="sm:w-[500px] w-full sm:h-[250px] h-[190px] overflow-hidden rounded-xl ">
+                <img src={zane} alt="" className="w-full h-full object-cover" />
+              </div>
+              <div className="sm:ml-10 ml-0 sm:mt-0 mt-5 flex flex-col sm:w-1/2 w-full text-white-100">
+                <span className="tan sm:text-5xl text-xl">ZANE</span>
+                <span className="mt-5 cor">
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut
+                  aspernatur ipsa deserunt. Numquam expedita suscipit repellat
+                  cum est natus nostrum quos ullam magni?
+                </span>
+                <span className="mt-5 text-sm cor">React // TailwindCSS</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

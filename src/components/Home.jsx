@@ -1,121 +1,63 @@
 import React from "react";
-import { grenish } from "../assets";
-import { SectionWrapper } from "../hoc";
-import { socialMediaLinks } from "../constants";
-import Tooltip from "@mui/material/Tooltip";
-import { Link } from "react-router-dom";
-import { projects } from "../constants";
-
-const ProjectCards = ({ id, name, image, desc, url }) => {
-  return (
-    <div className="mt-6 w-full flex justify-center flex-col items-center">
-      <div className="relative group border-4 cursor-pointer overflow-hidden border-vanilla dark:border-saffron rounded-2xl p-3 h-full dark:text-gray-100 md:h-3/4">
-        <a href={url} key={id} target="_blank">
-          <img
-            src={image}
-            alt={name}
-            className="w-full h-full object-cover rounded-lg transform transition-all duration-200 ease-linear group-hover:opacity-25 group-hover:scale-110"
-          />
-          <div className="absolute inset-0 bg-transparent bg-opacity-25 flex flex-col items-center justify-center transition-all duration-200 group-hover:bg-transparent">
-            <h2 className="sm:text-xl text-lg border-4 bg-[#3335334a] backdrop-blur-sm group-hover:backdrop-blur-none group-hover:bg-transparent border-jasmine dark:bg-[#EFDC9E4a] group-hover:border-transparent dark:text-night group-hover:text-platinum group-hover:dark:text-jet p-2 rounded-xl md:text-3xl text-alabaster font-bold">
-              {name}
-            </h2>
-            <p className="text-xs opacity-0 group-hover:opacity-100 md:text-sm text-platinum dark:text-jet">
-              {desc}
-            </p>
-          </div>
-        </a>
-      </div>
-    </div>
-  );
-};
+import { UilLocationPoint, UilCodeBranch } from "@iconscout/react-unicons";
 
 const Home = () => {
+  const currentWork = {
+    title: "jujutsu-kaisen-wiki",
+    description:
+      "Jujutsu Kaisen Wiki is a fan-made wiki dedicated to celebrating the captivating world of Jujutsu Kaisen.",
+    link: "https://github.com/Grenish/jujutsu-kaisen-wiki",
+  };
+
   return (
-    <div className="transition-colors ease-in-out">
-      <SectionWrapper>
-        <div className="w-full">
-          <div>
-            <img
-              src={grenish}
-              alt="An image of myself"
-              className="profile-image w-[150px] h-[150px] md:w-[250px] md:h-[250px] object-cover border-4 border-jasmine dark:border-dark"
-            />
-          </div>
-          <div className="mt-4 space-y-2 font-sans">
-            <h1 className="text-4xl md:text-5xl font-extrabold text-platinum dark:text-dark">
-              Hi there, I'm{" "}
-              <span className="text-saffron underline">Grenish Rai</span> 👋
+    <div className=" bg-night relative z-0 overflow-hidden">
+      <div className="blob"></div>
+      <div className="w-full min-h-screen flex flex-col items-start justify-center  overflow-hidden">
+        <div className="w-full px-4  md:px-8 lg:px-16 xl:px-32">
+          <div className="sm:w-full md:w-10/12 lg:w-10/12 xl:w-4/5 px-4 mx-auto flex flex-col">
+            <span className="cor sm:text-xl text-base">Hi, there! I'm</span>
+            <h1 className="tan sm:text-4xl text-xl sm:pt-5 pt-2 bg-gradient-to-r from-[#fe4b8b] via-[#5BC4E6] to-[#FFEEC2] text-transparent bg-clip-text font-bold">
+              Grenish Rai
             </h1>
-            <p className="text-base md:text-lg text-alabaster dark:text-dark opacity-40">
-              Web Developer and UI/UX Designer
-            </p>
-          </div>
-          <div className="mt-5 font-sans">
-            <p className="text-base md:text-lg text-platinum dark:text-dark">
-              Innovating through code, shaping tomorrow's tech. Currently
-              pursuing BCA.
-            </p>
-          </div>
-          <div className="text-saffron font-sans mt-2 flex items-center space-x-3 dark:text-vanilla transition-colors duration-150">
-            <p className="text-base md:text-lg text-platinum dark:text-dark">
-              Find me here
-            </p>
-            {socialMediaLinks.map((link) => (
-              <Tooltip title={link.name} key={link.name}>
-                <a
-                  key={link.name}
-                  href={link.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img
-                    src={link.icon}
-                    alt={link.name}
-                    className="w-11 bg-jet dark:bg-platinum p-2 rounded-full"
-                  />
-                </a>
-              </Tooltip>
-            ))}
-          </div>
-          <div className="mt-10 border-4 border-vanilla dark:border-saffron p-3 rounded-3xl">
-            <p className="text-platinum font-mono dark:text-jet sm:text-sm text-xs text-justify">
-              Give someone a program; you frustrate them for a day; teach them
-              how to program, and you frustrate them for a lifetime - David
-              Leinweber.
-            </p>
-          </div>
-          <div className="mt-10">
-            <span className="flex items-center justify-between">
-              <h2 className="sm:text-4xl text-2xl font-sans font-extraBold text-platinum dark:text-night">
-                Project Overview
-              </h2>
-              <Link to="/projects">
-                <p className="text-gray-400 dark:text-gray-800 sm:text-sm text-xs text-justify mt-4">
-                  {" "}
-                  View all{" "}
-                </p>
-              </Link>
+            <span className="cor sm:mt-5 mt-2 sm:text-2xl text-xl text-gray-300">
+              a passionate Full Stack Web Developer and creative Designer
+              dedicated to simplifying the task and crafting fresh, enjoyable
+              experiences for users.
             </span>
-            <div>
-              {projects
-                .sort(() => Math.random() - 0.5)
-                .slice(0, 2)
-                .map((project) => {
-                  return (
-                    <ProjectCards
-                      key={project.id}
-                      name={project.name}
-                      image={project.image}
-                      desc={project.desc}
-                      url={project.url}
-                    />
-                  );
-                })}
+            <div className="mt-5 flex flex-col md:flex-row gap-4 md:gap-6">
+              <div className="flex flex-col w-[300px]">
+                <span className="tan italic font-semibold flex gap-2 sm:text-md text-sm">
+                  currently <UilLocationPoint />
+                </span>
+                <span className="cor font-semibold text-gray-500 text-md">
+                  Student
+                </span>
+                <span className="cor sm:text-md text-sm">
+                  Sikkim Manipal Institute of Technology
+                </span>
+                <span className="cor sm:text-md text-sm">BCA</span>
+              </div>
+              <div className="md:w-[300px] flex flex-col mt-4 md:mt-0">
+                <span className="tan italic font-semibold">
+                  <a
+                    href={currentWork.link}
+                    className="gap-2 inline-flex sm:text-md text-sm"
+                    target="_blank"
+                  >
+                    working <UilCodeBranch />
+                  </a>
+                </span>
+                <span className="cor font-semibold text-gray-500 sm:text-md text-sm">
+                  {currentWork.title}
+                </span>
+                <span className="cor sm:text-md text-sm">
+                  {currentWork.description}
+                </span>
+              </div>
             </div>
           </div>
         </div>
-      </SectionWrapper>
+      </div>
     </div>
   );
 };
