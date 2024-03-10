@@ -2,10 +2,8 @@ import React from "react";
 import {
   Navbar,
   Home,
-  Contact,
   Footer,
   Projects,
-  Loader,
   FeaturedWork,
 } from "./components";
 import { Route, Routes, useLocation } from "react-router";
