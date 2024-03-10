@@ -6,4 +6,4 @@ When I have free time, I enjoy reading, playing guitar and piano, and listening 
 This portfolio website is made using React, Tailwindcss, and MaterialUI and is hosted on vercel.
 
 Preview:
-![[Screenshot 2023-09-13 201819](https://grenishrai.vercel.app/)](https://github.com/Grenish/personal-portfolio/assets/107925840/c969e73b-01ab-468c-ab7b-de3c015a07ba)
+![image](https://github.com/Grenish/personal-portfolio/assets/107925840/eefbed15-c69f-47cd-8ed5-055d173bc5b3)
