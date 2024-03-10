@@ -108,12 +108,12 @@ const Navbar = () => {
                     )}
                   </li>
                   {isSocialOpen && (
-                    <div className="sm:block sm:w-auto w-full justify-between left-0 flex absolute top-10 cor sm:ml-3 ml-0 p-3">
+                    <div className="sm:block sm:w-auto w-full justify-between left-0 flex absolute top-10 cor sm:ml-3 ml-0 p-3 ">
                       {socials.map((socials, index) => {
                         return (
                           <li
                             key={index}
-                            className="text-white-200  hover:text-gray-400 my-3"
+                            className="text-white-200  hover:text-gray-400"
                           >
                             <a href={socials.link} target="_blank">
                               {socials.name}
