@@ -1,0 +1,19 @@
+# Allow all search engines to crawl the main content
+User-agent: *
+Disallow:
+
+# Block access to any admin or backend directories (if they exist)
+Disallow: /admin/
+Disallow: /backend/
+
+# Block access to any scripts or temporary files
+Disallow: /scripts/
+Disallow: /temp/
+
+# Block access to any private files (if they exist)
+Disallow: /private/
+
+# Allow search engines to crawl the following directories
+Allow: /images/
+Allow: /css/
+Allow: /js/
