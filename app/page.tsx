@@ -1,8 +1,11 @@
+import LoadingScreen from "./components/LoadingScreen";
+import Hero from "./pages/Hero";
 
 export default function Page() {
   return (
     <div>
-      <h1 className="text-4xl">Hi, Im Grenish.</h1>
+      <Hero />
+      <LoadingScreen />
     </div>
-  )
+  );
 }
