@@ -2,3 +2,71 @@
 @tailwind components;
 @tailwind utilities;
 
+.hero-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: black;
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0.1) 1px,
+      transparent 1px
+    ),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+  background-size: 40px 40px;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.hero-body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, transparent 30%, black 100%);
+  pointer-events: none;
+}
+
+.hero-title {
+  color: rgba(255, 255, 255, 0.936);
+  font-size: 3rem;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  font-weight: bold;
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes wave {
+  0% {
+    transform: rotate(0deg);
+  }
+  20% {
+    transform: rotate(15deg);
+  }
+  40% {
+    transform: rotate(-10deg);
+  }
+  60% {
+    transform: rotate(15deg);
+  }
+  80% {
+    transform: rotate(-10deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.wave {
+  display: inline-block;
+  transform-origin: 70% 70%; /* Adjust origin to make it look like it's waving from the "wrist" */
+  animation: wave 1.5s infinite;
+}
