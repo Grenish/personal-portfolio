@@ -3,7 +3,7 @@ import { Inter, Poppins, Montserrat } from "next/font/google";
 import "./globals.css";
 import { Providers } from "./providers";
 
-// const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin"] });
 const poppins = Poppins({ subsets: ["latin"], weight: "400" });
 const montserrat = Montserrat({ subsets: ["latin"] });
 
