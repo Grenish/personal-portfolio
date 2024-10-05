@@ -19,6 +19,7 @@ import TechStack from "./pages/TechStack";
 import { FloatingDock } from "@/components/ui/floating-dock";
 import Footer from "./pages/Footer";
 import Advertisement from "./pages/Ads";
+import { Analytics } from "@vercel/analytics/react";
 
 export default function Page() {
   const homeRef = useRef<HTMLDivElement>(null);
@@ -97,6 +98,7 @@ export default function Page() {
       >
         <FloatingDock items={links} desktopClassName="bg-neutral-900" />
       </motion.div>
+      <Analytics />
     </div>
   );
 }
