@@ -71,7 +71,7 @@ export default function Projects() {
     {
       title: "Download",
       icon: <IconDownload className="h-full w-full text-neutral-300" />,
-      href: "/grenishrai.pdf",
+      href: "/resume_grenish_rai.pdf",
       Download: true,
     },
   ];
