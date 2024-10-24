@@ -355,19 +355,20 @@ export default function ProjectSection() {
   );
 
   // Ensure unique languages and technologies
-  const allProjectLanguages = [
-    ...new Set(
+  // Ensure unique languages and technologies
+  const allProjectLanguages = Array.from(
+    new Set(
       projects.flatMap((project) =>
         project.languages.map((lang) => lang.trim())
       )
-    ),
-  ].sort();
+    )
+  ).sort();
 
-  const allPackageTechnologies = [
-    ...new Set(
+  const allPackageTechnologies = Array.from(
+    new Set(
       npmPackages.flatMap((pkg) => pkg.technologies.map((tech) => tech.trim()))
-    ),
-  ].sort();
+    )
+  ).sort();
 
   // Improved filtering logic
   const filteredProjects = selectedProjectLanguage
