@@ -355,7 +355,6 @@ export default function ProjectSection() {
   );
 
   // Ensure unique languages and technologies
-  // Ensure unique languages and technologies
   const allProjectLanguages = Array.from(
     new Set(
       projects.flatMap((project) =>
