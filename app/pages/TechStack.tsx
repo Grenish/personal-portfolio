@@ -107,6 +107,7 @@ const techStacks: Record<string, TechCategory> = {
     technologies: [
       { name: "Docker", logo: "docker", desc: "Containerization" },
       { name: "AWS", logo: "aws", desc: "Cloud Services" },
+      { name: "Rust", logo: "rust", desc: "Systems Programming" },
     ],
   },
 };
