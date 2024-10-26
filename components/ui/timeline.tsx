@@ -33,15 +33,18 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
   const opacityTransform = useTransform(scrollYProgress, [0, 0.1], [0, 1]);
 
   return (
-    <div className="w-full bg-gradient-to-b from-black  to-[#0E051C] font-sans md:px-10" ref={containerRef}>
+    <div
+      className="w-full bg-gradient-to-b from-black  to-[#0E051C] font-sans md:px-10"
+      ref={containerRef}
+    >
       <div className="max-w-7xl mx-auto py-20 px-4 md:px-8 lg:px-10">
         <h2 className="text-3xl md:text-4xl mb-4 text-white max-w-4xl mistrully">
           I Like Building Things
         </h2>
         <p className="text-neutral-300 text-xs md:text-base max-w-3xl">
-          In my college years, I tried participated in various hackathons and
-          seeing the teams build amazing projects inspired me to start building
-          my own projects. Here are some of the projects I have worked on.
+          I'm actively participating in hackathons, as watching others bring
+          innovative ideas to life is incredibly inspiring. It's one of the key
+          reasons that keeps me motivated and driven.
         </p>
       </div>
 
