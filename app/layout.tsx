@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Inter, Poppins, Montserrat } from "next/font/google";
 import "./globals.css";
 import { Providers } from "./providers";
+import { Suspense } from "react";
+import LoadingScreen from "./components/Loading";
 
 const inter = Inter({ subsets: ["latin"] });
 const poppins = Poppins({ subsets: ["latin"], weight: "400" });
@@ -22,7 +24,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={montserrat.className}>
-        <Providers>{children}</Providers>
+        <Providers>
+          <Suspense fallback={<LoadingScreen />}>{children}</Suspense>
+        </Providers>
       </body>
     </html>
   );

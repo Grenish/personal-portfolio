@@ -12,7 +12,6 @@ import {
   IconBlockquote,
   IconMailSpark,
 } from "@tabler/icons-react";
-import LoadingScreen from "./components/LoadingScreen";
 import About from "./pages/About";
 import Hero from "./pages/Hero";
 import TechStack from "./pages/TechStack";
@@ -20,6 +19,7 @@ import { FloatingDock } from "@/components/ui/floating-dock";
 import Footer from "./pages/Footer";
 import Advertisement from "./pages/Ads";
 import { Analytics } from "@vercel/analytics/react";
+import Hack from "./pages/Hack";
 
 export default function Page() {
   const homeRef = useRef<HTMLDivElement>(null);
@@ -57,7 +57,7 @@ export default function Page() {
     {
       title: "Blogs",
       icon: <IconBlockquote className="h-full w-full text-neutral-300" />,
-      href: "https://dev.to/grenishrai",
+      href: "/blogs",
     },
     {
       title: "Contact",
@@ -88,6 +88,7 @@ export default function Page() {
       <Hero ref={homeRef} />
       <About />
       <TechStack />
+      <Hack />
       <Advertisement />
       <Footer ref={footerRef} />
       <motion.div

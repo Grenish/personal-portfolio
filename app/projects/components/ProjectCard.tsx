@@ -388,13 +388,24 @@ export default function ProjectSection() {
     <section className="py-16 px-4 bg-gradient-to-b from-black to-purple-950 min-h-screen pb-32">
       <div className="container mx-auto max-w-6xl">
         <motion.h2
-          className="text-3xl md:text-4xl font-light text-center mb-12 text-gray-100"
+          className="text-3xl md:text-4xl font-light text-center mb-5 text-gray-100 mistrully"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
           My Work
         </motion.h2>
+        <motion.p
+          className="text-sm md:text-base font-light text-center mb-12 text-gray-300"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          Here are some projects and packages I've developed, inspired by a
+          vision to transform exceptional ideas into impactful experiences. I'm
+          continuously working on new ideas, striving to bring even more
+          extraordinary concepts to life.
+        </motion.p>
 
         <Tabs activeTab={activeTab} setActiveTab={setActiveTab} />
 

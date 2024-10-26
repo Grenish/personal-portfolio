@@ -11,10 +11,10 @@ import {
   IconBlockquote,
   IconMailSpark,
 } from "@tabler/icons-react";
-import ProjectSection from "./components/ProjectCard";
 import { FloatingDock } from "@/components/ui/floating-dock";
+import Blogs from "./components/Blogs";
 
-export default function Projects() {
+export default function page() {
   const homeRef = useRef<HTMLDivElement>(null);
   const footerRef = useRef<HTMLDivElement>(null);
 
@@ -78,7 +78,7 @@ export default function Projects() {
 
   return (
     <div className="min-h-screen bg-black">
-      <ProjectSection />
+        <Blogs />
       <motion.div
         variants={variants}
         initial="hidden"
