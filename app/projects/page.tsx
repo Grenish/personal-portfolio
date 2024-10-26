@@ -50,7 +50,7 @@ export default function Projects() {
     {
       title: "Blogs",
       icon: <IconBlockquote className="h-full w-full text-neutral-300" />,
-      href: "https://dev.to/grenishrai",
+      href: "/blogs",
     },
     {
       title: "Contact",
