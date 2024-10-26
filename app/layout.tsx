@@ -4,6 +4,7 @@ import "./globals.css";
 import { Providers } from "./providers";
 import { Suspense } from "react";
 import LoadingScreen from "./components/Loading";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const inter = Inter({ subsets: ["latin"] });
 const poppins = Poppins({ subsets: ["latin"], weight: "400" });
@@ -25,7 +26,10 @@ export default function RootLayout({
     <html lang="en">
       <body className={montserrat.className}>
         <Providers>
-          <Suspense fallback={<LoadingScreen />}>{children}</Suspense>
+          <Suspense fallback={<LoadingScreen />}>
+            {children}
+            <SpeedInsights />
+          </Suspense>
         </Providers>
       </body>
     </html>
