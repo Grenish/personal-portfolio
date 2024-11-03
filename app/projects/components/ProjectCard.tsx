@@ -85,6 +85,14 @@ const projects: Project[] = [
     ],
     image: "/myresume.png",
   },
+  {
+    id: 7,
+    title: "Rust Projects",
+    description: "A repository containing Rust projects while learning",
+    languages: ["Rust"],
+    image: "/rustpr.png",
+    githubUrl: "https://github.com/Grenish/rust-projects"
+  },
 ];
 
 const npmPackages: NpmPackage[] = [
