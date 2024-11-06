@@ -101,7 +101,7 @@ const techStacks: Record<string, TechCategory> = {
       },
     ],
   },
-  Hacking: {
+  Learning: {
     color: "bg-gradient-to-br from-pink-600 to-pink-800",
     icon: <Blocks className="w-8 h-8 text-white" />,
     technologies: [
