@@ -93,6 +93,14 @@ const projects: Project[] = [
     image: "/rustpr.png",
     githubUrl: "https://github.com/Grenish/rust-projects"
   },
+  {
+    id: 8,
+    title: "Make Sam Happy",
+    description: "An interactive conversational AI integrated game where you have to make Sam happy again.",
+    languages: ["Next.js", "Tailwind CSS", "Vercel"],
+    image: "/makesamhappy.png",
+    githubUrl: "https://make-sam-happy.vercel.app/"
+  },
 ];
 
 const npmPackages: NpmPackage[] = [
