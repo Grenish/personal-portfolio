@@ -69,6 +69,11 @@ export default function Page() {
       icon: <IconBrandLinkedin className="h-full w-full text-neutral-300" />,
       href: "https://www.linkedin.com/in/grenish-rai/",
     },
+    {
+      title: "X",
+      icon: <IconBrandX className="h-full w-full text-neutral-300" />,
+      href: "https://x.com/grenish_rai",
+    },
 
     {
       title: "GitHub",
@@ -78,7 +83,7 @@ export default function Page() {
     {
       title: "Download",
       icon: <IconDownload className="h-full w-full text-neutral-300" />,
-      href: "/resume_grenish_rai.pdf",
+      href: "/resume-final.pdf",
       Download: true,
     },
   ];
