@@ -17,15 +17,30 @@ export default function ContactPage() {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setStatus("success");
-      setFormData({ name: "", email: "", message: "" });
+    try {
+      const response = await fetch('/api/send', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
 
+      if (response.ok) {
+        setStatus('success');
+        setFormData({ name: '', email: '', message: '' });
+      } else {
+        setStatus('error');
+      }
+    } catch (error) {
+      console.error('Error sending message:', error);
+      setStatus('error');
+    } finally {
+      setIsSubmitting(false);
+      
       // Reset status after 3 seconds
-      setTimeout(() => setStatus("idle"), 3000);
-    }, 1000);
+      setTimeout(() => setStatus('idle'), 3000);
+    }
   };
 
   const handleChange = (
@@ -155,6 +170,11 @@ export default function ContactPage() {
                 {status === "success" && (
                   <p className="mt-3 text-xs text-green-500">
                     Message sent successfully! I'll get back to you soon.
+                  </p>
+                )}
+                {status === "error" && (
+                  <p className="mt-3 text-xs text-red-500">
+                    Failed to send message. Please try again or contact me directly.
                   </p>
                 )}
               </div>
