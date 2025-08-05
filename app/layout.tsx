@@ -13,36 +13,74 @@ const mont = Montserrat({
 
 export const metadata: Metadata = {
   title: {
-    default: "Grenish Rai - Portfolio",
-    template: `%s | Grenish Rai`,
+    default: "Grenish Rai | Full Stack Developer & UI/UX Designer Portfolio",
+    template: `%s - Grenish Rai`,
   },
   description:
-    "Explore the portfolio of Grenish Rai, a front-end developer and designer specializing in creating modern and responsive web applications. Holds a BCA from Sikkim Manipal Institute of Technology.",
+    "Full stack developer and UI/UX designer crafting exceptional digital experiences with React, Next.js, Node.js, and modern web technologies. BCA graduate from Sikkim Manipal Institute of Technology. View projects, skills, and professional journey.",
   authors: [{ name: "Grenish Rai" }],
   creator: "Grenish Rai",
   keywords: [
     "Grenish Rai",
-    "Portfolio",
+    "Full Stack Developer",
     "Front-end Developer",
-    "Designer",
+    "Backend Developer",
+    "UI/UX Designer",
     "Web Developer",
-    "React",
-    "Next.js",
+    "React Developer",
+    "Next.js Developer",
+    "Node.js Developer",
+    "JavaScript Developer",
+    "TypeScript",
+    "Portfolio",
     "SMIT",
+    "Sikkim Manipal",
+    "BCA Graduate",
+    "Web Design",
+    "Responsive Design",
+    "Modern Web Applications",
+    "Frontend Engineer",
+    "Backend Engineer",
+    "Full Stack Engineer",
   ],
   openGraph: {
-    title: "Grenish Rai - Portfolio",
+    title: "Grenish Rai | Full Stack Developer & UI/UX Designer",
     description:
-      "Explore the portfolio of Grenish Rai, a front-end developer and designer.",
-    siteName: "Grenish Rai's Portfolio",
+      "Passionate full stack developer and designer creating modern, responsive web applications. Explore my portfolio showcasing React, Next.js, Node.js projects and design work.",
+    url: "https://grenishrai.icu",
+    siteName: "Grenish Rai",
     locale: "en_US",
     type: "website",
+    images: [
+      {
+        url: "/og.png",
+        width: 1200,
+        height: 630,
+        alt: "Grenish Rai - Full Stack Developer & Designer Portfolio",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Grenish Rai - Portfolio",
+    title: "Grenish Rai | Full Stack Developer & UI/UX Designer",
     description:
-      "Explore the portfolio of Grenish Rai, a front-end developer and designer.",
+      "Passionate about creating exceptional digital experiences with React, Next.js, Node.js, and modern web technologies. View my portfolio and projects.",
+    creator: "@grenishrai",
+    images: ["/og.png"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  alternates: {
+    canonical: "https://grenishrai.icu", // Add your actual domain
   },
 };
 
