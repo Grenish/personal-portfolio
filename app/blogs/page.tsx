@@ -47,14 +47,14 @@ function BlogSkeleton() {
   return (
     <div className="space-y-1">
       {[...Array(4)].map((_, i) => (
-        <div key={i} className="animate-pulse py-8 border-b border-gray-900">
+        <div key={i} className="animate-pulse py-6 border-b border-gray-900">
           <div className="flex items-start justify-between">
             <div className="flex-1">
-              <div className="h-7 bg-gray-900 rounded-md w-3/4 mb-3"></div>
-              <div className="h-4 bg-gray-900 rounded-md w-full mb-2"></div>
-              <div className="h-4 bg-gray-900 rounded-md w-2/3"></div>
+              <div className="h-5 bg-gray-900 rounded-md w-3/4 mb-2"></div>
+              <div className="h-3 bg-gray-900 rounded-md w-full mb-1"></div>
+              <div className="h-3 bg-gray-900 rounded-md w-2/3"></div>
             </div>
-            <div className="h-10 w-10 bg-gray-900 rounded-full ml-8"></div>
+            <div className="h-8 w-8 bg-gray-900 rounded-full ml-6"></div>
           </div>
         </div>
       ))}
@@ -87,11 +87,11 @@ export default async function BlogsPage() {
     <div className="min-h-screen bg-gray-950">
       <div className="max-w-5xl mx-auto px-6 md:px-8 py-20">
         {/* Header */}
-        <header className="mb-20">
-          <h1 className="text-5xl md:text-6xl font-light text-gray-100 mb-6">
+        <header className="mb-16">
+          <h1 className="text-3xl md:text-4xl font-light text-gray-100 mb-4">
             Blogs
           </h1>
-          <p className="text-lg text-gray-400 max-w-2xl">
+          <p className="text-base text-gray-400 max-w-2xl">
             Exploring the intersection of code, design, and human experience through 
             technical articles and thoughtful reflections.
           </p>
@@ -99,12 +99,12 @@ export default async function BlogsPage() {
 
         {/* Articles List */}
         <Suspense fallback={<BlogSkeleton />}>
-          <div className="space-y-16">
+          <div className="space-y-12">
             {years.map((year) => (
               <section key={year}>
                 {/* Year Header */}
-                <div className="flex items-center gap-4 mb-8">
-                  <h2 className="text-sm font-medium text-gray-500 uppercase tracking-wider">
+                <div className="flex items-center gap-4 mb-6">
+                  <h2 className="text-xs font-medium text-gray-500 uppercase tracking-wider">
                     {year}
                   </h2>
                   <div className="flex-1 h-px bg-gray-900"></div>
@@ -121,17 +121,17 @@ export default async function BlogsPage() {
                       <Link
                         key={article.id}
                         href={`/blogs/${article.id}`}
-                        className={`group block py-8 ${
+                        className={`group block py-6 ${
                           !isLastInYear ? "border-b border-gray-900" : ""
                         }`}
                       >
-                        <article className="flex items-start justify-between gap-8">
-                          <div className="flex-1 space-y-3">
+                        <article className="flex items-start justify-between gap-6">
+                          <div className="flex-1 space-y-2">
                             {/* Date and metadata */}
-                            <div className="flex items-center gap-3 text-sm text-gray-500">
+                            <div className="flex items-center gap-2 text-xs text-gray-500">
                               <time dateTime={article.published_at}>
                                 {date.toLocaleDateString("en-US", {
-                                  month: "long",
+                                  month: "short",
                                   day: "numeric",
                                 })}
                               </time>
@@ -148,12 +148,12 @@ export default async function BlogsPage() {
                             </div>
 
                             {/* Title */}
-                            <h3 className="text-xl md:text-2xl font-medium text-gray-100 group-hover:text-gray-300 transition-colors leading-tight">
+                            <h3 className="text-lg md:text-xl font-medium text-gray-100 group-hover:text-gray-300 transition-colors leading-tight">
                               {article.title}
                             </h3>
 
                             {/* Description */}
-                            <p className="text-gray-400 leading-relaxed line-clamp-2">
+                            <p className="text-sm text-gray-400 leading-relaxed line-clamp-2">
                               {article.description}
                             </p>
 
@@ -173,10 +173,10 @@ export default async function BlogsPage() {
                           </div>
 
                           {/* Arrow indicator */}
-                          <div className="flex-shrink-0 mt-2">
-                            <div className="w-10 h-10 rounded-full border border-gray-800 group-hover:border-gray-700 flex items-center justify-center transition-all duration-300 group-hover:scale-110">
+                          <div className="flex-shrink-0 mt-1">
+                            <div className="w-8 h-8 rounded-full border border-gray-800 group-hover:border-gray-700 flex items-center justify-center transition-all duration-300 group-hover:scale-110">
                               <ArrowUpRight 
-                                size={16} 
+                                size={14} 
                                 className="text-gray-600 group-hover:text-gray-400 transition-colors"
                               />
                             </div>
@@ -193,19 +193,19 @@ export default async function BlogsPage() {
 
         {/* Footer */}
         {articles.length > 0 && (
-          <footer className="mt-24 pt-12 border-t border-gray-900">
+          <footer className="mt-16 pt-8 border-t border-gray-900">
             <div className="flex items-center justify-between">
-              <p className="text-sm text-gray-500">
+              <p className="text-xs text-gray-500">
                 {articles.length} articles · {years.length} years of writing
               </p>
               <a
                 href="https://dev.to/grenishrai"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sm text-gray-500 hover:text-gray-300 transition-colors flex items-center gap-2 group"
+                className="text-xs text-gray-500 hover:text-gray-300 transition-colors flex items-center gap-2 group"
               >
                 View on dev.to
-                <ArrowUpRight size={14} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                <ArrowUpRight size={12} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
               </a>
             </div>
           </footer>
