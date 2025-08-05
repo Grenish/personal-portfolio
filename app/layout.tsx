@@ -1,20 +1,48 @@
 import type { Metadata } from "next";
-import { Inter, Poppins, Montserrat } from "next/font/google";
+import {Montserrat } from "next/font/google";
 import "./globals.css";
-import { Providers } from "./providers";
-import { Suspense } from "react";
-import LoadingScreen from "./components/Loading";
-import { SpeedInsights } from "@vercel/speed-insights/next";
+import Navbar from "@/components/navbar";
+import Footer from "@/components/footer";
 
-const inter = Inter({ subsets: ["latin"] });
-const poppins = Poppins({ subsets: ["latin"], weight: "400" });
-const montserrat = Montserrat({ subsets: ["latin"] });
+const mont = Montserrat({
+  subsets: ["latin"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  display: "swap",
+})
 
 export const metadata: Metadata = {
-  title: "Grenish Rai",
+  title: {
+    default: "Grenish Rai - Portfolio",
+    template: `%s | Grenish Rai`,
+  },
   description:
-    "meet Grenish Rai's portfolio. A front-end developer and designer. Currently pursuing BCA in Computer Applications from SMIT aka. Sikkim Manipal Institute of Technology.",
+    "Explore the portfolio of Grenish Rai, a front-end developer and designer specializing in creating modern and responsive web applications. Holds a BCA from Sikkim Manipal Institute of Technology.",
   authors: [{ name: "Grenish Rai" }],
+  creator: "Grenish Rai",
+  keywords: [
+    "Grenish Rai",
+    "Portfolio",
+    "Front-end Developer",
+    "Designer",
+    "Web Developer",
+    "React",
+    "Next.js",
+    "SMIT",
+  ],
+  openGraph: {
+    title: "Grenish Rai - Portfolio",
+    description:
+      "Explore the portfolio of Grenish Rai, a front-end developer and designer.",
+    siteName: "Grenish Rai's Portfolio",
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Grenish Rai - Portfolio",
+    description:
+      "Explore the portfolio of Grenish Rai, a front-end developer and designer.",
+  },
 };
 
 export default function RootLayout({
@@ -24,13 +52,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={montserrat.className}>
-        <Providers>
-          <Suspense fallback={<LoadingScreen />}>
-            {children}
-            <SpeedInsights />
-          </Suspense>
-        </Providers>
+      <body
+        className={`${mont.className} antialiased relative bg-gray-900 text-white`}
+      >
+        <Navbar />
+        {children}
+        <Footer />
       </body>
     </html>
   );

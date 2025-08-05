@@ -1,110 +1,31 @@
-"use client";
+import About from "@/components/about";
+import DailyDevSquad from "@/components/ads";
+import HackathonTimeline from "@/components/hackathon";
+import Hero from "@/components/hero";
+import Projects from "@/components/projects";
 
-import { useRef } from "react";
-import { motion, useInView } from "framer-motion";
-import {
-  IconBrandGithub,
-  IconBrandX,
-  IconHome,
-  IconBrandLinkedin,
-  IconWorldWww,
-  IconDownload,
-  IconBlockquote,
-  IconMailSpark,
-} from "@tabler/icons-react";
-import About from "./pages/About";
-import Hero from "./pages/Hero";
-import TechStack from "./pages/TechStack";
-import { FloatingDock } from "@/components/ui/floating-dock";
-import Footer from "./pages/Footer";
-import Advertisement from "./pages/Ads";
-import { Analytics } from "@vercel/analytics/react";
-import Hack from "./pages/Hack";
-
-export default function Page() {
-  const homeRef = useRef<HTMLDivElement>(null);
-  const footerRef = useRef<HTMLDivElement>(null);
-
-  const isHomeInView = useInView(homeRef, { amount: 0.5 });
-  const isFooterInView = useInView(footerRef, { amount: 0.1 });
-
-  const variants = {
-    hidden: { opacity: 0, scale: 0.5, y: 100, x: "-50%" },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      y: 0,
-      x: "-50%",
-      transition: {
-        type: "spring",
-        stiffness: 500,
-        damping: 15,
-      },
-    },
-  };
-
-  const links = [
-    {
-      title: "Home",
-      icon: <IconHome className="h-full w-full text-neutral-300" />,
-      href: "/",
-    },
-    {
-      title: "Projects",
-      icon: <IconWorldWww className="h-full w-full text-neutral-300" />,
-      href: "/projects",
-    },
-    {
-      title: "Blogs",
-      icon: <IconBlockquote className="h-full w-full text-neutral-300" />,
-      href: "/blogs",
-    },
-    {
-      title: "Contact",
-      icon: <IconMailSpark className="h-full w-full text-neutral-300" />,
-      href: "mailto:mrcoder2033d@gmail.com",
-    },
-    {
-      title: "LinkedIn",
-      icon: <IconBrandLinkedin className="h-full w-full text-neutral-300" />,
-      href: "https://www.linkedin.com/in/grenish-rai/",
-    },
-    {
-      title: "X",
-      icon: <IconBrandX className="h-full w-full text-neutral-300" />,
-      href: "https://x.com/grenish_rai",
-    },
-
-    {
-      title: "GitHub",
-      icon: <IconBrandGithub className="h-full w-full text-neutral-300" />,
-      href: "https://github.com/Grenish",
-    },
-    {
-      title: "Download",
-      icon: <IconDownload className="h-full w-full text-neutral-300" />,
-      href: "/resume-final.pdf",
-      Download: true,
-    },
-  ];
-
+export default function Home() {
   return (
-    <div>
-      <Hero ref={homeRef} />
+    <div className="">
+      <div className="min-h-screen w-full bg-gray-950 relative">
+        <div
+          className="absolute inset-0 z-0 opacity-[0.015] dark:opacity-[0.03]"
+          style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
+          }}
+        />
+        <div className="relative z-10">
+          <Hero />
+        </div>
+      </div>
+
       <About />
-      <TechStack />
-      <Hack />
-      <Advertisement />
-      <Footer ref={footerRef} />
-      <motion.div
-        variants={variants}
-        initial="hidden"
-        animate={!isHomeInView && !isFooterInView ? "visible" : "hidden"}
-        className="fixed bottom-10 sm:left-1/2 left-auto transform -translate-x-1/2 sm:right-auto right-5 z-50"
-      >
-        <FloatingDock items={links} desktopClassName="bg-neutral-900" />
-      </motion.div>
-      <Analytics />
+
+      <Projects />
+
+      <HackathonTimeline />
+
+      <DailyDevSquad />
     </div>
   );
 }

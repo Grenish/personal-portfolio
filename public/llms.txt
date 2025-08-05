@@ -1,0 +1,37 @@
+# Grenish Rai - Portfolio Website
+
+## About
+This is the personal portfolio website of Grenish Rai, a Full Stack Developer and BCA graduate from Sikkim Manipal Institute of Technology. He specializes in modern web technologies including React, Next.js, and AI/ML.
+
+## Site Structure
+- **Homepage (/)**: Main portfolio with hero, about, projects, and hackathon sections.
+- **Blog (/blogs)**: Technical articles fetched from the Dev.to API.
+- **Contact (/contact)**: Contact information and social media links.
+
+## Key Features
+- Modern responsive design with a dark theme.
+- Interactive project showcase and hackathon timeline.
+- Dynamic blog integration with Dev.to.
+- Built with the Next.js App Router.
+
+## Technologies Used
+- Next.js 15.3.1
+- React 19
+- TypeScript
+- Tailwind CSS
+- Lucide React (icons)
+- GSAP (animations)
+- Bun (package manager)
+
+## Content Focus
+- Full stack development projects.
+- AI/ML applications and experiments.
+- Open source contributions (NPM packages, APIs).
+- Hackathon participation and achievements.
+- Technical blog posts on web development.
+
+## Contact Information
+- Email: mrcoder2033d@gmail.com
+- GitHub: https://github.com/grenish
+- LinkedIn: https://linkedin.com/in/grenish-rai
+- Twitter: https://twitter.com/grenish_rai

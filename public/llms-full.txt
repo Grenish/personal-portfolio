@@ -1,0 +1,104 @@
+# Grenish Rai - Full Stack Developer Portfolio
+
+## Complete Site Information
+
+### Personal Information
+- **Name**: Grenish Rai
+- **Title**: Full Stack Developer
+- **Education**: Bachelor of Computer Applications (BCA) from Sikkim Manipal Institute of Technology (SMIT)
+- **Location**: Based in India
+- **Specialization**: Modern web applications using React, Next.js, TypeScript, and backend technologies. Also interested in AI/ML and creative writing.
+- **Availability**: Open for freelance projects.
+
+### Contact & Social Links
+- **Email**: mrcoder2033d@gmail.com
+- **GitHub**: https://github.com/grenish
+- **LinkedIn**: https://linkedin.com/in/grenish-rai
+- **Twitter**: https://twitter.com/grenish_rai
+- **Portfolio**: https://grenishrai.dev
+- **Support**: https://buymeacoffee.com/grenish
+
+### Website Structure & Pages
+
+#### Homepage (/)
+- **Hero Section**: Introduction.
+- **About Section**: Details professional background, skills, and current projects like 'Authrix'.
+- **Projects Section**: A showcase of 4 key projects with descriptions and links.
+- **Hackathon Timeline**: An interactive timeline of 2 major hackathon participations.
+- **Daily.dev Squad**: A community engagement section.
+
+#### Blog Section (/blogs)
+- **Integration**: Fetches articles from Dev.to API for the username 'grenishrai'.
+- **Features**: Articles are grouped by year, show reading time, view count, and tags.
+- **Content**: Technical articles and tutorials.
+
+#### Contact Page (/contact)
+- Provides a way to get in touch and lists social media links.
+
+### Technical Implementation
+
+#### Frontend Technologies
+- **Framework**: Next.js 15.3.1 with App Router
+- **UI Library**: React 19
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **Icons**: Lucide React
+- **Animations**: GSAP
+- **Fonts**: Montserrat
+- **Markdown**: `react-markdown` for rendering blog content.
+
+#### Key Features
+- **Responsive Design**: Mobile-first approach.
+- **Dark Theme**: Consistent dark theme (`bg-gray-900`, `bg-gray-950`).
+- **Dynamic Content**: Blog posts are fetched dynamically from the Dev.to API.
+- **Interactive Elements**: Modal popups for hackathon details, hover effects on projects.
+- **SEO Optimization**: Metadata defined in `layout.tsx`.
+
+#### Component Architecture
+- **Navbar**: Adaptive navigation.
+- **Hero**: Landing section.
+- **About**: Professional summary and technology stack.
+- **Projects**: Interactive project list.
+- **HackathonTimeline**: Timeline with modal for details.
+- **Footer**: Contains navigation and social links.
+- **MarkdownRenderer**: (Used in blog pages) for rendering markdown.
+
+### Project Portfolio
+
+#### Featured Projects
+1.  **Authrix**: An enterprise-grade authentication library for JavaScript. (NPM Package)
+2.  **Detoxify**: A browser extension to hide YouTube Shorts. (SaaS Product)
+3.  **Make Sam Happy**: An interactive AI-driven game. (AI/ML)
+4.  **Valorant API**: An unofficial open-source API for Valorant game data. (Data Visualization)
+
+#### Hackathon Achievements
+- **Smart India Hackathon (2023)**: Presented an AI model for dermatological disease detection.
+- **Dark Pattern Buster Hackathon (2023)**: Runner-up for a browser extension to detect deceptive UI/UX.
+
+### Content Strategy
+
+#### Blog Topics
+- Web development tutorials
+- React and Next.js
+- Full stack development
+- AI/ML
+- Open source projects
+
+#### SEO Keywords
+- Grenish Rai, Portfolio, Full Stack Developer, React, Next.js, SMIT, TypeScript, AI/ML
+
+### Development Setup
+
+#### Build System
+- **Package Manager**: Bun
+- **Development Script**: `next dev --turbopack`
+- **Build Script**: `next build`
+- **Linting**: `next lint` (ESLint)
+- **TypeScript**: Strict type checking enabled.
+
+### API Integration
+
+#### Dev.to Integration
+- **Endpoint**: `https://dev.to/api/articles?username=grenishrai`
+- **Authentication**: Uses `DEVTO_API_KEY` from environment variables.
+- **Caching**: Revalidates every 3600 seconds (`revalidate: 3600`).

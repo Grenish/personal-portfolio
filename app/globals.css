@@ -1,148 +1,32 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-@font-face {
-  font-family: "Mistrully";
-  src: url("../fonts/MistrullyRegular.woff2") format("woff2"),
-    url("../fonts/MistrullyRegular.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
+html,
+body {
+  scroll-behavior: smooth;
 }
 
-@font-face {
-  font-family: "Habomika";
-  src: url("../fonts/HabomikaRegular.woff2") format("woff2"),
-    url("../fonts/HabomikaRegular.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-.mistrully {
-  font-family: "Mistrully", sans-serif;
-}
-
-.habomika {
-  font-family: "Habomika", sans-serif;
-}
-
-.hero-body {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: black;
-  background-image: linear-gradient(
-      rgba(255, 255, 255, 0.1) 1px,
-      transparent 1px
-    ),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
-  background-size: 40px 40px;
-  position: relative;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-}
-
-.hero-body::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(circle at center, transparent 30%, black 100%);
-  pointer-events: none;
-}
-
-.hero-title {
-  color: rgba(255, 255, 255, 0.936);
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-  font-weight: bold;
-  position: relative;
-  z-index: 1;
-}
-
-@keyframes wave {
+@keyframes shimmer {
   0% {
-    transform: rotate(0deg);
-  }
-  20% {
-    transform: rotate(15deg);
-  }
-  40% {
-    transform: rotate(-10deg);
-  }
-  60% {
-    transform: rotate(15deg);
-  }
-  80% {
-    transform: rotate(-10deg);
+    transform: translateX(-100%);
   }
   100% {
-    transform: rotate(0deg);
+    transform: translateX(100%);
   }
 }
-
-.wave {
-  display: inline-block;
-  transform-origin: 70% 70%; /* Adjust origin to make it look like it's waving from the "wrist" */
-  animation: wave 1.5s infinite;
+.animate-shimmer {
+  animation: shimmer 2s infinite;
 }
 
-@media (max-width: 767px) {
-  .sm-bg-image {
-    background-image: url("https://images.unsplash.com/photo-1713429237253-8d786de46f31?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
-    background-size: cover;
-    background-position: center;
-  }
-}
 
-.edges {
+
+.lanyard-wrapper {
   position: relative;
-}
-
-.edges:before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 50%; /* Move the starting point to the middle */
-  transform: translateX(-50%); /* Center it relative to the parent */
-  width: 100vw;
-  height: 100%;
-  background: radial-gradient(circle at center, transparent 30%, black 100%);
-  pointer-events: none;
-  z-index: 99;
-}
-
-.footer {
+  z-index: 0;
+  width: 100%;
+  height: 100vh;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: black;
-  background-image: linear-gradient(
-      rgba(255, 255, 255, 0.1) 1px,
-      transparent 1px
-    ),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
-  background-size: 40px 40px;
-  position: relative;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-}
-
-.footer::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(circle at center, transparent 30%, black 100%);
-  pointer-events: none;
+  transform: scale(1);
+  transform-origin: center;
 }
