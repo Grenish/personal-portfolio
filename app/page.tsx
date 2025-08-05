@@ -1,4 +1,5 @@
 import About from "@/components/about";
+import DailyDevSquad from "@/components/ads";
 import HackathonTimeline from "@/components/hackathon";
 import Hero from "@/components/hero";
 import Projects from "@/components/projects";
@@ -23,6 +24,8 @@ export default function Home() {
       <Projects />
 
       <HackathonTimeline />
+
+      <DailyDevSquad />
     </div>
   );
 }
