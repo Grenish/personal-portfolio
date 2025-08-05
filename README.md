@@ -1,6 +1,6 @@
 # Grenish Rai
 
-![Portfolio Preview](./public/ss.png)
+![Portfolio Preview](./public/page.png)
 
 A modern, responsive personal portfolio website built with Next.js 15, TypeScript, and TailwindCSS. Features a sleek dark theme, smooth animations, and interactive contact form with email notifications.
 
