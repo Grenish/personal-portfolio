@@ -2,6 +2,7 @@
 
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+import rehypeRaw from "rehype-raw";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { oneDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 import Image from "next/image";
@@ -20,7 +21,6 @@ export default function MarkdownRenderer({ content, className = "" }: MarkdownRe
     setMounted(true);
   }, []);
 
-  // Prevent SSR/hydration mismatch by rendering a simple version on server
   if (!mounted) {
     return (
       <div className={`markdown-content ${className}`}>
@@ -37,6 +37,7 @@ export default function MarkdownRenderer({ content, className = "" }: MarkdownRe
     <div className={`markdown-content ${className}`}>
       <ReactMarkdown
         remarkPlugins={[remarkGfm]}
+        rehypePlugins={[rehypeRaw]}
         components={{
           // Headings
           h1: ({ children }) => (
@@ -52,10 +53,23 @@ export default function MarkdownRenderer({ content, className = "" }: MarkdownRe
             <h4 className="text-lg font-medium text-gray-100 mt-6 mb-3">{children}</h4>
           ),
 
-          // Paragraphs and text
-          p: ({ children }) => (
-            <p className="text-gray-300 leading-relaxed mb-4">{children}</p>
-          ),
+          // Paragraphs - Handle block content
+          p: ({ children, node }) => {
+            // Check if paragraph contains only images or other block elements
+            const hasBlockContent = node?.children?.some((child: any) => 
+              child.type === 'element' && ['img', 'figure', 'div'].includes(child.tagName)
+            );
+
+            if (hasBlockContent) {
+              return <>{children}</>;
+            }
+
+            return (
+              <p className="text-gray-300 leading-relaxed mb-4">{children}</p>
+            );
+          },
+
+          // Text elements
           strong: ({ children }) => (
             <strong className="text-gray-100 font-medium">{children}</strong>
           ),
@@ -105,8 +119,8 @@ export default function MarkdownRenderer({ content, className = "" }: MarkdownRe
 
           // Blockquotes
           blockquote: ({ children }) => (
-            <blockquote className="border-l-4 border-gray-700 pl-4 my-4 italic">
-              <div className="text-gray-400">{children}</div>
+            <blockquote className="border-l-4 border-gray-700 pl-4 my-4 italic text-gray-400">
+              {children}
             </blockquote>
           ),
 
@@ -133,12 +147,6 @@ export default function MarkdownRenderer({ content, className = "" }: MarkdownRe
                       fontSize: "0.875rem",
                       padding: "1rem",
                     }}
-                    codeTagProps={{
-                      style: {
-                        fontSize: "inherit",
-                        fontFamily: "ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace",
-                      },
-                    }}
                   >
                     {String(children).replace(/\n$/, "")}
                   </SyntaxHighlighter>
@@ -153,15 +161,14 @@ export default function MarkdownRenderer({ content, className = "" }: MarkdownRe
             );
           },
 
-          // Images
+          // Images - Render as div to avoid nesting issues
           img: ({ node, src, alt, ...props }: any) => {
             if (!src) return null;
             
-            // Handle relative URLs
             const imageSrc = src.startsWith('http') ? src : src;
             
             return (
-              <figure className="my-8">
+              <div className="my-8">
                 <div className="relative aspect-video w-full overflow-hidden rounded-lg bg-gray-900">
                   <Image
                     src={imageSrc}
@@ -169,19 +176,19 @@ export default function MarkdownRenderer({ content, className = "" }: MarkdownRe
                     fill
                     className="object-contain"
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 70vw"
-                    unoptimized={!imageSrc.startsWith('/')} // Disable optimization for external images
+                    unoptimized={!imageSrc.startsWith('/')}
                   />
                 </div>
                 {alt && (
-                  <figcaption className="text-sm text-gray-500 text-center mt-2">
+                  <p className="text-sm text-gray-500 text-center mt-2">
                     {alt}
-                  </figcaption>
+                  </p>
                 )}
-              </figure>
+              </div>
             );
           },
 
-          // Tables (with GFM)
+          // Tables
           table: ({ children }) => (
             <div className="overflow-x-auto my-6">
               <table className="min-w-full divide-y divide-gray-800">
@@ -212,7 +219,12 @@ export default function MarkdownRenderer({ content, className = "" }: MarkdownRe
             <hr className="my-8 border-gray-800" />
           ),
 
-          // Task lists (GFM)
+          // Pre for code blocks
+          pre: ({ children }) => (
+            <>{children}</>
+          ),
+
+          // Task lists
           input: ({ type, checked, disabled, ...props }: any) => {
             if (type === "checkbox") {
               return (
@@ -222,7 +234,7 @@ export default function MarkdownRenderer({ content, className = "" }: MarkdownRe
                   disabled={disabled}
                   className="mr-2 rounded border-gray-700 bg-gray-900 text-blue-500 focus:ring-blue-500 focus:ring-offset-0"
                   readOnly
-                  onChange={() => {}} // Prevent React warning
+                  onChange={() => {}}
                 />
               );
             }
