@@ -65,7 +65,7 @@ export const metadata: Metadata = {
     title: "Grenish Rai | Full Stack Developer & UI/UX Designer",
     description:
       "Passionate about creating exceptional digital experiences with React, Next.js, Node.js, and modern web technologies. View my portfolio and projects.",
-    creator: "@grenishrai",
+    creator: "@grenish_rai",
     images: ["/og.png"],
   },
   robots: {
