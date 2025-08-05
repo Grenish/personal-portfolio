@@ -48,7 +48,7 @@ const projects: Project[] = [
 
 export default function Projects() {
   return (
-    <section className="min-h-screen py-20 bg-gray-950">
+    <section id="projects" className="min-h-screen py-20 bg-gray-950">
       <div className="w-full max-w-6xl mx-auto px-6 md:px-8">
         {/* Header */}
         <div className="max-w-4xl">
