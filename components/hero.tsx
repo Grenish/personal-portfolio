@@ -1,6 +1,7 @@
 "use client";
 
-import { Calendar } from "lucide-react";
+import { Calendar, Coffee } from "lucide-react";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 export default function Hero() {
@@ -51,7 +52,16 @@ export default function Hero() {
 
               <span className="text-gray-400 dark:text-gray-600">•</span>
 
-              <button className="group relative inline-flex items-center gap-1.5 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 transition-colors">
+              <button
+                onClick={() => {
+                  window.open(
+                    "https://calendar.app.google/BV6SXs8sXpmbFwdF7",
+                    "_blank",
+                    "noopener,noreferrer"
+                  );
+                }}
+                className="group relative inline-flex items-center gap-1.5 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 transition-colors cursor-pointer"
+              >
                 <Calendar size={14} />
                 <span className="text-sm whitespace-nowrap">Book a call</span>
               </button>
@@ -77,17 +87,26 @@ export default function Hero() {
           </p>
 
           <div className="flex gap-4 pt-2">
-            <a
-              href="#projects"
+            <Link
+              href="/#projects"
               className="text-sm text-gray-900 dark:text-gray-100 underline underline-offset-4 hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
             >
               View Work
-            </a>
-            <a
-              href="#contact"
+            </Link>
+            <Link
+              href="/contact"
               className="text-sm text-gray-600 dark:text-gray-400 underline underline-offset-4 hover:text-gray-900 dark:hover:text-gray-100 transition-colors"
             >
               Get in Touch
+            </Link>
+            <a
+              href="https://buymeacoffee.com/grenish"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm text-gray-600 dark:text-gray-400 underline underline-offset-4 hover:text-gray-900 dark:hover:text-gray-100 transition-colors"
+            >
+              <Coffee size={14} className="inline mr-1" />
+              Buy me a coffee
             </a>
           </div>
         </div>
