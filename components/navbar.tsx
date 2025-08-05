@@ -20,10 +20,26 @@ export default function Navbar() {
   const pathname = usePathname();
 
   // Routes that should always use mobile-style navbar
-  const mobileStyleRoutes = ["/blogs"];
-  const shouldUseMobileStyle = mobileStyleRoutes.some(route => 
+  const mobileStyleRoutes = ["/blogs", "/contact"];
+  const shouldUseMobileStyle = mobileStyleRoutes.some((route) =>
     pathname.startsWith(route)
   );
+
+  // Handle smooth scrolling for anchor links
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    // Only handle smooth scrolling for anchor links when on home page
+    if (href.startsWith("/#") && pathname === "/") {
+      e.preventDefault();
+      const targetId = href.substring(2); // Remove "/#"
+      const targetElement = document.getElementById(targetId);
+      if (targetElement) {
+        targetElement.scrollIntoView({ 
+          behavior: "smooth",
+          block: "start"
+        });
+      }
+    }
+  };
 
   useEffect(() => {
     // Set client-side flag
@@ -126,10 +142,10 @@ export default function Navbar() {
 
   const navItems = [
     { icon: House, label: "Home", href: "/" },
-    { icon: PersonStanding, label: "About", href: "" },
+    { icon: PersonStanding, label: "About", href: "/#about" },
+    { icon: FolderGit2, label: "Projects", href: "/#projects" },
     { icon: Rss, label: "Blog", href: "/blogs" },
-    { icon: FolderGit2, label: "Projects", href: "" },
-    { icon: AtSign, label: "Contact", href: "" },
+    { icon: AtSign, label: "Contact", href: "/contact" },
   ];
 
   return (
@@ -141,8 +157,12 @@ export default function Navbar() {
           <div
             className={`flex items-center ${
               isMobile || shouldUseMobileStyle ? "gap-1" : "gap-2 md:gap-4"
-            } ${isMobile || shouldUseMobileStyle ? "px-3" : "px-6 md:px-8"} py-3 ${
-              isMobile || shouldUseMobileStyle ? "justify-center" : "justify-between"
+            } ${
+              isMobile || shouldUseMobileStyle ? "px-3" : "px-6 md:px-8"
+            } py-3 ${
+              isMobile || shouldUseMobileStyle
+                ? "justify-center"
+                : "justify-between"
             } w-full`}
           >
             {/* Logo */}
@@ -150,13 +170,7 @@ export default function Navbar() {
               href="/"
               className="group relative p-2.5 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
             >
-              <Image
-                src="/logo.jpeg"
-                width={20}
-                height={20}
-                alt="Logo"
-                className="dark:invert opacity-70 group-hover:opacity-100 transition-opacity"
-              />
+              <h2>GR</h2>
               {/* Tooltip */}
               <div className="absolute left-1/2 -translate-x-1/2 bottom-full mb-2 opacity-0 group-hover:opacity-100 pointer-events-none transition-all duration-200 translate-y-1 group-hover:translate-y-0">
                 <div className="bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900 text-xs font-medium px-2 py-1 rounded whitespace-nowrap">
@@ -181,6 +195,7 @@ export default function Navbar() {
                   <Link
                     key={item.label}
                     href={item.href}
+                    onClick={(e) => handleNavClick(e, item.href)}
                     className="group relative p-2.5 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
                   >
                     <Icon
@@ -204,13 +219,15 @@ export default function Navbar() {
             <div className="h-5 w-px bg-gray-300 dark:bg-gray-700" />
 
             {/* Resume Button */}
-            <button className="group relative p-2.5 rounded-full bg-gray-900 dark:bg-gray-100 hover:bg-gray-800 dark:hover:bg-gray-200 transition-colors">
+            <button
+              onClick={() => window.open("/resume.pdf", "_blank")}
+              className="group relative p-2.5 rounded-full bg-gray-900 dark:bg-gray-100 hover:bg-gray-800 dark:hover:bg-gray-200 transition-colors"
+            >
               <FileDown
                 size={18}
                 strokeWidth={2}
                 className="text-white dark:text-gray-900"
               />
-              {/* Tooltip */}
               <div className="absolute left-1/2 -translate-x-1/2 bottom-full mb-2 opacity-0 group-hover:opacity-100 pointer-events-none transition-all duration-200 translate-y-1 group-hover:translate-y-0">
                 <div className="bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900 text-xs font-medium px-2 py-1 rounded whitespace-nowrap">
                   Resume
