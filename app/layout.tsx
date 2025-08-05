@@ -80,7 +80,7 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: "https://grenishrai.icu", // Add your actual domain
+    canonical: "https://grenishrai.icu",
   },
 };
 
