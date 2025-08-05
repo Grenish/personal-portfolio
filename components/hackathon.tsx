@@ -29,38 +29,28 @@ const hackathons: HackathonEvent[] = [
     title: "Smart India Hackathon",
     description:
       "Presented a prototype by leveraging a fine-tuned AI model trained on a large dermatological dataset, resulting in accurate detection and classification of skin diseases, with an emphasis on early cancer diagnosis.",
-    date: "October",
+    date: "September",
     year: "2023",
     duration: "48h",
     team: "Team of 4",
     technologies: ["React Native", "ReactJs", "AI/ML", "Python Jupyter"],
     primaryImage: "/hackathons/SIH2.webp",
-    images: [
-      "/hackathons/ethglobal-1.jpg",
-      "/hackathons/ethglobal-2.jpg",
-      "/hackathons/ethglobal-3.jpg",
-    ],
-    links: {
-      github: "https://github.com/Grenish/project",
-      demo: "https://demo.com",
-    },
+    images: ["/hackathons/skinscan.png"],
   },
   {
     id: "2",
     title: "Dark Pattern Buster Hackathon",
     description:
       "Developed a browser extension by implementing automated detection of deceptive UI/UX patterns and providing contextual guidance, resulting in improved user awareness and easier navigation away from dark patterns on websites.",
-    date: "March",
+    date: "December",
+    achievement: "Runner-up",
     year: "2023",
     duration: "3 months",
     team: "Team of 3",
     primaryImage: "/hackathons/dpbh.png",
-    technologies: ["TensorFlow", "Flutter", "Google Cloud"],
-    images: ["/hackathons/google-1.jpg", "/hackathons/google-2.jpg"],
-    links: {
-      github: "https://github.com/Grenish/project",
-      demo: "https://demo.com",
-    },
+    technologies: ["Chrome Manifest V3", "JavaScript", "AI/ML", "Cloud"],
+
+    images: ["/hackathons/dpbh1.png", "/hackathons/dpbh2.png"],
   },
 ];
 
