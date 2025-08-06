@@ -2,7 +2,10 @@ import Image from "next/image";
 
 export default function About() {
   return (
-    <section id="about" className="min-h-screen flex items-center py-20 bg-gray-950">
+    <section
+      id="about"
+      className="min-h-screen flex items-center py-20 bg-gray-950"
+    >
       <div className="w-full max-w-4xl mx-auto px-6 md:px-8">
         <div className="grid md:grid-cols-5 gap-12 md:gap-16 items-start">
           {/* Image Column */}
@@ -15,18 +18,16 @@ export default function About() {
                 height={300}
                 className="rounded-2xl"
               />
-              <div className="absolute inset-0 rounded-2xl ring-1 ring-gray-200 dark:ring-gray-800"></div>
+              <div className="absolute inset-0 rounded-2xl ring-1 ring-gray-800"></div>
             </div>
           </div>
 
           {/* Content Column */}
           <div className="md:col-span-3 space-y-6">
             <div>
-              <h2 className="text-2xl font-medium text-gray-900 dark:text-gray-100 mb-4">
-                About
-              </h2>
+              <h2 className="text-2xl font-medium text-gray-100 mb-4">About</h2>
 
-              <div className="space-y-4 text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+              <div className="space-y-4 text-sm text-gray-400 leading-relaxed">
                 <p>
                   I'm a full stack developer and BCA graduate from Sikkim
                   Manipal Institute of Technology. What started as a casual
@@ -50,7 +51,7 @@ export default function About() {
             </div>
 
             <div>
-              <h3 className="text-sm font-medium text-gray-900 dark:text-gray-100 mb-3">
+              <h3 className="text-sm font-medium text-gray-100 mb-3">
                 Technologies I work with
               </h3>
               <div className="flex flex-wrap gap-2">
@@ -69,7 +70,7 @@ export default function About() {
                 ].map((tech) => (
                   <span
                     key={tech}
-                    className="text-sm text-gray-600 dark:text-gray-400 px-3 py-1 rounded-full border border-gray-200 dark:border-gray-800"
+                    className="text-sm text-gray-400 px-3 py-1 rounded-full border border-gray-800"
                   >
                     {tech}
                   </span>
@@ -77,7 +78,7 @@ export default function About() {
               </div>
             </div>
 
-            <div className="mt-2 space-y-2 text-sm text-gray-600 dark:text-gray-400">
+            <div className="mt-2 space-y-2 text-sm text-gray-400">
               <p>📍 Based in India</p>
               <p>💼 Open for freelance projects</p>
               <p>📧 mrcoder2033d@gmail.com</p>

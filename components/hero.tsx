@@ -36,21 +36,21 @@ export default function Hero() {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
               </span>
-              <span className="text-gray-600 dark:text-gray-400">
+              <span className="text-gray-400">
                 Available to work
               </span>
             </div>
 
-            <span className="hidden sm:block text-gray-400 dark:text-gray-600">
+            <span className="hidden sm:block text-gray-600">
               •
             </span>
 
             <div className="flex items-center gap-3 sm:gap-4">
-              <span className="text-gray-600 dark:text-gray-400 whitespace-nowrap">
+              <span className="text-gray-400 whitespace-nowrap">
                 {currentTime || "..."} IST
               </span>
 
-              <span className="text-gray-400 dark:text-gray-600">•</span>
+              <span className="text-gray-600">•</span>
 
               <button
                 onClick={() => {
@@ -60,7 +60,7 @@ export default function Hero() {
                     "noopener,noreferrer"
                   );
                 }}
-                className="group relative inline-flex items-center gap-1.5 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 transition-colors cursor-pointer"
+                className="group relative inline-flex items-center gap-1.5 text-gray-400 hover:text-gray-100 transition-colors cursor-pointer"
               >
                 <Calendar size={14} />
                 <span className="text-sm whitespace-nowrap">Book a call</span>
@@ -69,18 +69,18 @@ export default function Hero() {
           </div>
 
           <div>
-            <h1 className="text-4xl md:text-5xl flex items-end font-medium text-gray-900 dark:text-gray-100">
+            <h1 className="text-4xl md:text-5xl flex items-end font-medium text-gray-100">
               Grenish Rai
-              <span className="text-sm ml-2 text-gray-500 dark:text-gray-400">
+              <span className="text-sm ml-2 text-gray-400">
                 (<span className="italic">GREN-ish RYE</span>)
               </span>
             </h1>
-            <p className="text-lg md:text-xl text-gray-600 dark:text-gray-400 mt-2">
+            <p className="text-lg md:text-xl text-gray-400 mt-2">
               Full Stack Developer
             </p>
           </div>
 
-          <p className="text-sm text-gray-600 dark:text-gray-400 max-w-2xl leading-relaxed">
+          <p className="text-sm text-gray-400 max-w-2xl leading-relaxed">
             I build thoughtful digital experiences with modern web technologies.
             Currently focused on creating scalable applications and contributing
             to open-source projects.
@@ -89,13 +89,13 @@ export default function Hero() {
           <div className="flex gap-4 pt-2">
             <Link
               href="/#projects"
-              className="text-sm text-gray-900 dark:text-gray-100 underline underline-offset-4 hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
+              className="text-sm text-gray-100 underline underline-offset-4 hover:text-gray-300 transition-colors"
             >
               View Work
             </Link>
             <Link
               href="/contact"
-              className="text-sm text-gray-600 dark:text-gray-400 underline underline-offset-4 hover:text-gray-900 dark:hover:text-gray-100 transition-colors"
+              className="text-sm text-gray-400 underline underline-offset-4 hover:text-gray-100 transition-colors"
             >
               Get in Touch
             </Link>
@@ -103,7 +103,7 @@ export default function Hero() {
               href="https://buymeacoffee.com/grenish"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm text-gray-600 dark:text-gray-400 underline underline-offset-4 hover:text-gray-900 dark:hover:text-gray-100 transition-colors"
+              className="text-sm text-gray-400 underline underline-offset-4 hover:text-gray-100 transition-colors"
             >
               <Coffee size={14} className="inline mr-1" />
               Buy me a coffee

@@ -152,7 +152,7 @@ export default function Navbar() {
     <header className="w-full z-50 transition-none" style={getNavbarStyle()}>
       <div className="px-4">
         <nav
-          className={`bg-white/80 dark:bg-gray-950/40 backdrop-blur-md mx-auto rounded-full shadow-sm border border-gray-200 dark:border-gray-800 transition-all duration-300 ${getNavbarWidth()}`}
+          className={`bg-gray-950/40 backdrop-blur-md mx-auto rounded-full shadow-sm border border-gray-800 transition-all duration-300 ${getNavbarWidth()}`}
         >
           <div
             className={`flex items-center ${
@@ -168,20 +168,20 @@ export default function Navbar() {
             {/* Logo */}
             <a
               href="/"
-              className="group relative p-2.5 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+              className="group relative p-2.5 rounded-full hover:bg-gray-800 transition-colors"
             >
               <h2>GR</h2>
               {/* Tooltip */}
               <div className="absolute left-1/2 -translate-x-1/2 bottom-full mb-2 opacity-0 group-hover:opacity-100 pointer-events-none transition-all duration-200 translate-y-1 group-hover:translate-y-0">
-                <div className="bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900 text-xs font-medium px-2 py-1 rounded whitespace-nowrap">
+                <div className="bg-gray-100 text-gray-900 text-xs font-medium px-2 py-1 rounded whitespace-nowrap">
                   Grenish
-                  <div className="absolute left-1/2 -translate-x-1/2 top-full w-0 h-0 border-l-4 border-l-transparent border-r-4 border-r-transparent border-t-4 border-t-gray-900 dark:border-t-gray-100"></div>
+                  <div className="absolute left-1/2 -translate-x-1/2 top-full w-0 h-0 border-l-4 border-l-transparent border-r-4 border-r-transparent border-t-4 border-t-gray-100"></div>
                 </div>
               </div>
             </a>
 
             {/* Divider */}
-            <div className="h-5 w-px bg-gray-300 dark:bg-gray-700" />
+            <div className="h-5 w-px bg-gray-700" />
 
             {/* Navigation Items Container */}
             <div
@@ -196,18 +196,18 @@ export default function Navbar() {
                     key={item.label}
                     href={item.href}
                     onClick={(e) => handleNavClick(e, item.href)}
-                    className="group relative p-2.5 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                    className="group relative p-2.5 rounded-full hover:bg-gray-800 transition-colors"
                   >
                     <Icon
                       size={18}
                       strokeWidth={2}
-                      className="text-gray-600 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-gray-100 transition-colors"
+                      className="text-gray-400 group-hover:text-gray-100 transition-colors"
                     />
                     {/* Tooltip */}
                     <div className="absolute left-1/2 -translate-x-1/2 bottom-full mb-2 opacity-0 group-hover:opacity-100 pointer-events-none transition-all duration-200 translate-y-1 group-hover:translate-y-0">
-                      <div className="bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900 text-xs font-medium px-2 py-1 rounded whitespace-nowrap">
+                      <div className="bg-gray-100 text-gray-900 text-xs font-medium px-2 py-1 rounded whitespace-nowrap">
                         {item.label}
-                        <div className="absolute left-1/2 -translate-x-1/2 top-full w-0 h-0 border-l-4 border-l-transparent border-r-4 border-r-transparent border-t-4 border-t-gray-900 dark:border-t-gray-100"></div>
+                        <div className="absolute left-1/2 -translate-x-1/2 top-full w-0 h-0 border-l-4 border-l-transparent border-r-4 border-r-transparent border-t-4 border-t-gray-100"></div>
                       </div>
                     </div>
                   </Link>
@@ -216,22 +216,22 @@ export default function Navbar() {
             </div>
 
             {/* Divider */}
-            <div className="h-5 w-px bg-gray-300 dark:bg-gray-700" />
+            <div className="h-5 w-px bg-gray-700" />
 
             {/* Resume Button */}
             <button
               onClick={() => window.open("/resume.pdf", "_blank")}
-              className="group relative p-2.5 rounded-full bg-gray-900 dark:bg-gray-100 hover:bg-gray-800 dark:hover:bg-gray-200 transition-colors"
+              className="group relative p-2.5 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors"
             >
               <FileDown
                 size={18}
                 strokeWidth={2}
-                className="text-white dark:text-gray-900"
+                className="text-gray-900"
               />
               <div className="absolute left-1/2 -translate-x-1/2 bottom-full mb-2 opacity-0 group-hover:opacity-100 pointer-events-none transition-all duration-200 translate-y-1 group-hover:translate-y-0">
-                <div className="bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900 text-xs font-medium px-2 py-1 rounded whitespace-nowrap">
+                <div className="bg-gray-100 text-gray-900 text-xs font-medium px-2 py-1 rounded whitespace-nowrap">
                   Resume
-                  <div className="absolute left-1/2 -translate-x-1/2 top-full w-0 h-0 border-l-4 border-l-transparent border-r-4 border-r-transparent border-t-4 border-t-gray-900 dark:border-t-gray-100"></div>
+                  <div className="absolute left-1/2 -translate-x-1/2 top-full w-0 h-0 border-l-4 border-l-transparent border-r-4 border-r-transparent border-t-4 border-t-gray-100"></div>
                 </div>
               </div>
             </button>
