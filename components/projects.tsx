@@ -52,10 +52,8 @@ export default function Projects() {
       <div className="w-full max-w-6xl mx-auto px-6 md:px-8">
         {/* Header */}
         <div className="max-w-4xl">
-          <h2 className="text-2xl font-medium text-gray-900 dark:text-gray-100 mb-4">
-            Projects
-          </h2>
-          <p className="text-sm text-gray-600 dark:text-gray-400 mb-16">
+          <h2 className="text-2xl font-medium text-gray-100 mb-4">Projects</h2>
+          <p className="text-sm text-gray-400 mb-16">
             A collection of projects I've worked on, ranging from web
             applications to AI-powered tools.
           </p>
@@ -69,32 +67,30 @@ export default function Projects() {
               href={project.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="group block py-10 border-b border-gray-100 dark:border-gray-900 hover:border-gray-300 dark:hover:border-gray-700 transition-all duration-300"
+              className="group block py-10 border-b border-gray-900 hover:border-gray-700 transition-all duration-300"
             >
               <div className="grid md:grid-cols-12 gap-6 md:gap-8 items-start">
                 {/* Year & Category */}
                 <div className="md:col-span-2 space-y-1">
-                  <p className="text-sm font-medium text-gray-900 dark:text-gray-100">
+                  <p className="text-sm font-medium text-gray-100">
                     {project.year}
                   </p>
-                  <p className="text-sm text-gray-500 dark:text-gray-500">
-                    {project.category}
-                  </p>
+                  <p className="text-sm text-gray-500">{project.category}</p>
                 </div>
 
                 {/* Title & Description */}
                 <div className="md:col-span-9">
                   <div className="flex items-start justify-between gap-4">
                     <div className="space-y-2">
-                      <h3 className="text-lg md:text-xl font-medium text-gray-900 dark:text-gray-100 group-hover:text-gray-600 dark:group-hover:text-gray-300 transition-colors">
+                      <h3 className="text-lg md:text-xl font-medium text-gray-100 group-hover:text-gray-300 transition-colors">
                         {project.title}
                         {project.featured && (
-                          <span className="inline-block ml-3 text-xs font-normal text-gray-500 dark:text-gray-500 align-middle">
+                          <span className="inline-block ml-3 text-xs font-normal text-gray-500 align-middle">
                             Featured
                           </span>
                         )}
                       </h3>
-                      <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed max-w-2xl">
+                      <p className="text-sm text-gray-400 leading-relaxed max-w-2xl">
                         {project.description}
                       </p>
                     </div>
@@ -103,10 +99,10 @@ export default function Projects() {
 
                 {/* Arrow */}
                 <div className="md:col-span-1 flex justify-end">
-                  <div className="p-2 rounded-full group-hover:bg-gray-100 dark:group-hover:bg-gray-800 transition-all duration-300">
+                  <div className="p-2 rounded-full group-hover:bg-gray-800 transition-all duration-300">
                     <ArrowUpRight
                       size={20}
-                      className="text-gray-400 group-hover:text-gray-900 dark:group-hover:text-gray-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-300"
+                      className="text-gray-400 group-hover:text-gray-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-300"
                     />
                   </div>
                 </div>
@@ -117,14 +113,14 @@ export default function Projects() {
 
         {/* Footer Link */}
         <div className="mt-20 flex items-center justify-between">
-          <p className="text-xs text-gray-500 dark:text-gray-500">
+          <p className="text-xs text-gray-500">
             {projects.length} projects showcased
           </p>
           <a
             href="https://github.com/Grenish"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 transition-colors flex items-center gap-2 group"
+            className="text-xs text-gray-400 hover:text-gray-100 transition-colors flex items-center gap-2 group"
           >
             View archive
             <ArrowUpRight
