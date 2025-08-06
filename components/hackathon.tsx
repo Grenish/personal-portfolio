@@ -65,10 +65,10 @@ export default function HackathonTimeline() {
       <div className="max-w-6xl mx-auto px-6 md:px-8">
         {/* Header */}
         <header className="mb-16">
-          <h2 className="text-2xl font-medium text-gray-900 dark:text-gray-100 mb-4">
+          <h2 className="text-2xl font-medium text-gray-100 mb-4">
             Hackathons
           </h2>
-          <p className="text-sm text-gray-600 dark:text-gray-400 mb-16">
+          <p className="text-sm text-gray-400 mb-16">
             48-hour sprints of innovation, collaboration, and problem-solving.
             Each event pushed boundaries and created lasting connections.
           </p>
