@@ -12,15 +12,20 @@ export async function GET(request: NextRequest) {
     Accept: "application/vnd.forem.api-v1+json",
   };
 
-  // Add API key if available
-  if (process.env.DEVTO_API_KEY) {
-    headers["api-key"] = process.env.DEVTO_API_KEY;
+  // Add API key - required for /me endpoints
+  if (!process.env.DEVTO_API_KEY) {
+    return NextResponse.json(
+      { error: "API key is required for this endpoint" },
+      { status: 500 }
+    );
   }
+
+  headers["api-key"] = process.env.DEVTO_API_KEY;
 
   try {
     // First, get total count by fetching first page with per_page=1
     const countRes = await fetch(
-      "https://dev.to/api/articles?username=grenishrai&per_page=1",
+      "https://dev.to/api/articles/me/published?per_page=1",
       { headers }
     );
 
@@ -46,7 +51,7 @@ export async function GET(request: NextRequest) {
     } else {
       // Fallback: fetch a large number to estimate total
       const estimateRes = await fetch(
-        "https://dev.to/api/articles?username=grenishrai&per_page=1000",
+        "https://dev.to/api/articles/me/published?per_page=1000",
         { headers }
       );
       if (estimateRes.ok) {
@@ -57,7 +62,7 @@ export async function GET(request: NextRequest) {
 
     // Now fetch the actual page
     const res = await fetch(
-      `https://dev.to/api/articles?username=grenishrai&page=${page}&per_page=${perPage}`,
+      `https://dev.to/api/articles/me/published?page=${page}&per_page=${perPage}`,
       { headers }
     );
 
